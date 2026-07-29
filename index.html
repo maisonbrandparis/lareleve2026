@@ -588,9 +588,10 @@ function heroIntro(){
     /* temps de lecture */
     .to('#envelope', {y:40, x:12, duration:.4, ease:'power1.inOut'}, '+=.3')
     /* insertion en diagonale dans la fente (le clip la fait disparaître) */
-    .to('#envelope', {x:-40, y:210, duration:.6, ease:'power2.in'})
+    .to('#envelope', {x:-90, y:400, duration:.75, ease:'power2.in'})
+    .set('#envelope', {opacity:0})
     /* on la voit retomber à travers le plexiglas */
-    .to('#envInner', {y:96, rotate:-8, duration:.55, ease:'power2.in'}, '-=.22')
+    .to('#envInner', {y:96, rotate:-8, duration:.55, ease:'power2.in'}, '-=.42')
     .to('#envInner', {y:88, duration:.28, ease:'power2.out'})
     /* l'urne encaisse, la pile bouge */
     .to('#urne', {scaleY:.965, transformOrigin:'bottom center', duration:.12, ease:'power2.out'}, '-=.5')
