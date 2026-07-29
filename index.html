@@ -44,62 +44,106 @@ body{
 .cursor-ring.is-hover{width:64px;height:64px;background:rgba(108,43,217,.14);}
 @media (hover:none), (max-width:900px){ .cursor-dot,.cursor-ring{display:none;} }
 
-/* ---------- LOADER : URNE ---------- */
+/* ---------- LOADER : URNE PLEXIGLAS ---------- */
 .loader{
-  position:fixed;inset:0;z-index:10000;background:var(--indigo);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2rem;
-  cursor:pointer;
+  position:fixed;inset:0;z-index:10000;cursor:pointer;
+  background:
+    radial-gradient(120% 90% at 28% 12%, rgba(183,140,255,.14), transparent 55%),
+    radial-gradient(90% 70% at 78% 88%, rgba(108,43,217,.10), transparent 60%),
+    #120B2E;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.6rem;
 }
-.urne-scene{position:relative;width:300px;height:400px;}
+.loader-eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.32em;
+  text-transform:uppercase;color:rgba(244,239,230,.45);
+}
+.urne-scene{position:relative;width:340px;height:430px;}
+
+/* enveloppe extérieure, clipée à la hauteur de la fente */
+.env-clip{position:absolute;top:0;left:0;width:100%;height:224px;overflow:hidden;z-index:5;}
 .envelope{
-  position:absolute;left:50%;top:0;width:200px;height:126px;margin-left:-100px;
-  background:var(--cream);border-radius:10px;z-index:1;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;
-  box-shadow:0 18px 40px rgba(0,0,0,.35);will-change:transform;
+  position:absolute;left:50%;top:20px;width:210px;height:130px;margin-left:-105px;
+  background:linear-gradient(160deg,#FDFBF6,#EFE9DC);border-radius:6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
+  box-shadow:0 22px 50px rgba(0,0,0,.5), inset 0 0 0 1px rgba(43,27,94,.08);
+  transform:rotate(-36deg);will-change:transform;
 }
 .envelope::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:0;
-  border-left:100px solid transparent;border-right:100px solid transparent;
-  border-top:44px solid rgba(108,43,217,.16);border-radius:10px 10px 0 0;
+  content:'';position:absolute;inset:0;border-radius:6px;
+  background:linear-gradient(to bottom right, rgba(43,27,94,.05) 49.6%, transparent 50.4%),
+             linear-gradient(to bottom left, rgba(43,27,94,.05) 49.6%, transparent 50.4%);
+  background-size:100% 44%;background-repeat:no-repeat;
 }
 .envelope b{
-  font-weight:900;text-transform:uppercase;letter-spacing:-.01em;
-  font-size:1.5rem;color:var(--indigo);position:relative;
+  font-family:'Instrument Serif',serif;font-weight:400;text-transform:uppercase;
+  letter-spacing:.24em;font-size:1.32rem;color:#2B1B5E;position:relative;text-indent:.24em;
 }
 .envelope span{
-  font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;
-  text-transform:uppercase;color:#6C2BD9;position:relative;
+  font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(43,27,94,.5);position:relative;
 }
+
+/* urne transparente */
 .urne{
-  position:absolute;left:50%;bottom:0;width:260px;height:190px;margin-left:-130px;
-  background:#1F1347;border:3px solid var(--cream);border-radius:16px;z-index:2;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 24px 60px rgba(0,0,0,.4);will-change:transform;
+  position:absolute;left:50%;bottom:0;width:300px;height:216px;margin-left:-150px;
+  background:linear-gradient(165deg, rgba(255,255,255,.10), rgba(255,255,255,.03) 45%, rgba(183,140,255,.05));
+  border:1px solid rgba(244,239,230,.42);border-radius:8px;
+  overflow:hidden;z-index:2;will-change:transform;
+  box-shadow:0 30px 70px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.urne::before{ /* arête latérale lumineuse */
+  content:'';position:absolute;top:0;bottom:0;left:12px;width:1px;
+  background:linear-gradient(rgba(255,255,255,.5),transparent 70%);
+}
+.urne::after{ /* reflet diagonal */
+  content:'';position:absolute;inset:-40%;z-index:6;pointer-events:none;
+  background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.16) 50%, transparent 58%);
+  transform:translateX(-120%);
 }
 .urne-slot{
-  position:absolute;top:-3px;left:50%;transform:translateX(-50%);
-  width:170px;height:10px;background:var(--cream);border-radius:0 0 8px 8px;
-}
-.urne-slot::after{
-  content:'';position:absolute;left:8px;right:8px;top:3px;height:4px;
-  background:#0E0830;border-radius:4px;
+  position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  width:150px;height:5px;background:#0C0722;border-radius:3px;z-index:4;
+  box-shadow:0 1px 0 rgba(255,255,255,.3);
 }
 .urne-label{
-  font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.24em;
-  text-transform:uppercase;color:rgba(244,239,230,.75);text-align:center;line-height:2;
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  z-index:3;pointer-events:none;color:rgba(244,239,230,.88);text-align:center;gap:.1rem;
+  text-shadow:0 1px 6px rgba(0,0,0,.3);
 }
-.urne-label b{
-  display:block;font-family:'Archivo',sans-serif;font-weight:900;font-size:1.3rem;
-  letter-spacing:.02em;color:var(--cream);
+.urne-label .l1{font-family:'Instrument Serif',serif;font-size:1.05rem;letter-spacing:.42em;text-transform:uppercase;text-indent:.42em;}
+.urne-label .l2{font-family:'Instrument Serif',serif;font-size:3.4rem;letter-spacing:.14em;text-transform:uppercase;line-height:1;text-indent:.14em;}
+.urne-label .l3{font-family:'Instrument Serif',serif;font-size:1.15rem;letter-spacing:.34em;text-indent:.34em;border-top:1px solid rgba(244,239,230,.35);padding-top:.35rem;margin-top:.3rem;}
+
+/* pile d'enveloppes au fond + enveloppe qui tombe dedans */
+.pile{position:absolute;left:0;right:0;bottom:8px;height:70px;z-index:1;}
+.pile i{
+  position:absolute;background:linear-gradient(#F4EFE6,#DDD6C6);border-radius:3px;
+  width:120px;height:34px;box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+.pile i:nth-child(1){left:14px;bottom:2px;transform:rotate(-9deg);}
+.pile i:nth-child(2){left:112px;bottom:-4px;transform:rotate(6deg);}
+.pile i:nth-child(3){left:60px;bottom:16px;transform:rotate(-3deg);width:130px;}
+.pile i:nth-child(4){left:170px;bottom:20px;transform:rotate(12deg);width:100px;}
+.env-inner{
+  position:absolute;left:50%;top:0;width:170px;height:104px;margin-left:-85px;
+  background:linear-gradient(160deg,#FDFBF6,#EAE3D4);border-radius:5px;z-index:2;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  display:flex;align-items:center;justify-content:center;
+  transform:translateY(-150px) rotate(-36deg);will-change:transform;
+}
+.env-inner b{
+  font-family:'Instrument Serif',serif;font-weight:400;text-transform:uppercase;
+  letter-spacing:.2em;font-size:1rem;color:#2B1B5E;text-indent:.2em;
 }
 .avote{
-  position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) scale(0);
+  position:absolute;left:50%;top:16%;transform:translate(-50%,-50%) scale(0);
   font-family:'Instrument Serif',serif;font-style:italic;
-  font-size:3.2rem;color:#B78CFF;white-space:nowrap;z-index:3;
+  font-size:3.4rem;color:#F4EFE6;white-space:nowrap;z-index:7;
+  text-shadow:0 0 40px rgba(183,140,255,.5);
 }
 .loader-skip{
-  font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(244,239,230,.4);
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(244,239,230,.35);
 }
 /* ---------- NAV ---------- */
 nav{
@@ -323,14 +367,23 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
 
 <!-- LOADER -->
 <div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-eyebrow">Élections CSE · UES Indigo · Octobre 2026</div>
   <div class="urne-scene">
-    <div class="envelope" id="envelope">
-      <b>La Relève</b>
-      <span>Élections CSE · Octobre 2026</span>
+    <div class="env-clip">
+      <div class="envelope" id="envelope">
+        <b>La Relève</b>
+        <span>Votre voix · Notre action</span>
+      </div>
     </div>
     <div class="urne" id="urne">
       <div class="urne-slot"></div>
-      <div class="urne-label">Urne<b>CSE 2026</b></div>
+      <div class="urne-label">
+        <div class="l1">Élections</div>
+        <div class="l2">CSE</div>
+        <div class="l3">2026</div>
+      </div>
+      <div class="pile"><i></i><i></i><i></i><i></i></div>
+      <div class="env-inner" id="envInner"><b>La Relève</b></div>
     </div>
     <div class="avote" id="avote">A voté.</div>
   </div>
@@ -527,22 +580,32 @@ function heroIntro(){
     }
   });
 
-  tl.from('#urne', {y:60, opacity:0, duration:.6, ease:'power3.out'})
-    /* l'enveloppe descend et se présente devant l'urne */
-    .from('#envelope', {y:-220, opacity:0, rotate:-8, duration:.8, ease:'power3.out'}, '-=.2')
-    /* petit temps de lecture + hésitation */
-    .to('#envelope', {rotate:3, duration:.3, ease:'power1.inOut'}, '+=.35')
-    .to('#envelope', {rotate:0, duration:.25, ease:'power1.inOut'})
-    /* insertion dans la fente (l'urne passe devant, l'enveloppe disparaît dedans) */
-    .to('#envelope', {y:170, scale:.82, duration:.55, ease:'power2.in'})
-    /* l'urne encaisse le vote */
-    .to('#urne', {scaleY:.93, scaleX:1.04, transformOrigin:'bottom center', duration:.14, ease:'power2.out'}, '-=.08')
-    .to('#urne', {scaleY:1, scaleX:1, duration:.5, ease:'elastic.out(1,.45)'})
+  tl.from('#urne', {y:50, opacity:0, scale:.97, duration:.7, ease:'power3.out'})
+    .from('.loader-eyebrow', {opacity:0, y:-10, duration:.5}, '-=.4')
+    /* l'enveloppe arrive inclinée, du haut à droite, et se présente devant la fente */
+    .fromTo('#envelope', {x:120, y:-190, rotate:-24, opacity:0},
+      {x:16, y:34, rotate:-36, opacity:1, duration:.9, ease:'power3.out'}, '-=.2')
+    /* temps de lecture */
+    .to('#envelope', {y:40, x:12, duration:.4, ease:'power1.inOut'}, '+=.3')
+    /* insertion en diagonale dans la fente (le clip la fait disparaître) */
+    .to('#envelope', {x:-40, y:210, duration:.6, ease:'power2.in'})
+    /* on la voit retomber à travers le plexiglas */
+    .to('#envInner', {y:96, rotate:-8, duration:.55, ease:'power2.in'}, '-=.22')
+    .to('#envInner', {y:88, duration:.28, ease:'power2.out'})
+    /* l'urne encaisse, la pile bouge */
+    .to('#urne', {scaleY:.965, transformOrigin:'bottom center', duration:.12, ease:'power2.out'}, '-=.5')
+    .to('#urne', {scaleY:1, duration:.45, ease:'elastic.out(1,.5)'})
+    .to('.pile i:nth-child(3)', {rotate:-6, y:2, duration:.3}, '-=.45')
     /* A voté. */
-    .to('#avote', {scale:1, duration:.55, ease:'back.out(2)'}, '-=.35')
-    .to({}, {duration:.65});
+    .to('#avote', {scale:1, duration:.55, ease:'back.out(1.9)'}, '-=.2')
+    .to({}, {duration:.7});
 
-  /* clic = passer l'intro */
+  /* balayage lumineux du verre via keyframes CSS */
+  const sweep = document.createElement('style');
+  sweep.textContent = '@keyframes sweep{to{transform:translateX(120%);}} .urne.swept::after{animation:sweep 1s ease .1s forwards;}';
+  document.head.appendChild(sweep);
+  tl.call(() => document.getElementById('urne').classList.add('swept'), null, '-=1.2');
+
   loader.addEventListener('click', () => tl.progress(1));
 })();
 
