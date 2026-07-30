@@ -294,6 +294,42 @@ nav.scrolled .nav-cta{background:var(--indigo);color:var(--cream) !important;}
   letter-spacing:.08em;color:rgba(43,27,94,.55);
 }
 
+/* ---------- RESULTATS 2022 ---------- */
+.resultats{background:var(--indigo);color:var(--cream);padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
+.resultats .section-label{color:#B78CFF;}
+.resultats h2{
+  font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;
+  font-size:clamp(2.2rem,6vw,4.8rem);margin-bottom:1.2rem;
+}
+.resultats h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:#B78CFF;}
+.res-intro{max-width:64ch;line-height:1.65;color:rgba(244,239,230,.8);margin-bottom:3rem;font-size:clamp(.95rem,1.5vw,1.08rem);}
+.college{border-top:1px solid rgba(244,239,230,.16);padding:2.2rem 0 1.6rem;}
+.college-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.8rem;margin-bottom:.5rem;}
+.college-head h3{font-weight:900;text-transform:uppercase;font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:-.01em;}
+.college-head .meta{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.08em;color:rgba(244,239,230,.6);}
+.college .warn{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;
+  color:#B78CFF;margin-bottom:1.2rem;
+}
+.bar-row{display:grid;grid-template-columns:minmax(64px,88px) 1fr auto;gap:1rem;align-items:center;padding:.4rem 0;}
+.bar-name{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.08em;}
+.bar-track{height:14px;background:rgba(244,239,230,.1);border-radius:99px;overflow:hidden;}
+.bar-fill{height:100%;width:0;background:#B78CFF;border-radius:99px;}
+.bar-row.ghostrow .bar-fill{background:rgba(244,239,230,.35);}
+.bar-val{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:rgba(244,239,230,.78);white-space:nowrap;text-align:right;}
+.bar-scale{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:rgba(244,239,230,.4);margin-top:.6rem;}
+.callout-588{margin:3rem 0 1rem;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(1.4rem,4vw,3rem);}
+.callout-588 .big{font-weight:900;font-size:clamp(4.5rem,13vw,10rem);line-height:.9;color:#B78CFF;letter-spacing:-.03em;}
+.callout-588 .big small{display:block;font-size:.16em;font-family:'JetBrains Mono',monospace;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,239,230,.6);margin-top:.6rem;}
+.callout-588 p{max-width:48ch;line-height:1.65;color:rgba(244,239,230,.88);font-size:clamp(.95rem,1.5vw,1.1rem);}
+.callout-588 p b{color:#B78CFF;}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(244,239,230,.16);border:1px solid rgba(244,239,230,.16);margin-top:2.6rem;border-radius:14px;overflow:hidden;}
+.res-cell{background:var(--indigo);padding:1.6rem;display:flex;flex-direction:column;gap:.5rem;}
+.res-cell b{font-weight:900;font-size:clamp(1.9rem,3.6vw,3rem);letter-spacing:-.02em;}
+.res-cell span{font-size:.86rem;line-height:1.5;color:rgba(244,239,230,.7);}
+.res-footer{margin-top:2.6rem;font-size:clamp(.95rem,1.5vw,1.05rem);line-height:1.7;color:rgba(244,239,230,.85);max-width:72ch;}
+.res-footer b{color:#B78CFF;}
+
 /* ---------- ENGAGEMENTS ---------- */
 .engagements{padding:clamp(4rem,10vh,7rem) 0 clamp(6rem,14vh,9rem);overflow:hidden;}
 .eng-head{
@@ -460,6 +496,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
   <a class="nav-logo" href="#top">La Relève<b>.</b></a>
   <div class="nav-links">
     <a href="#constat">Le constat</a>
+    <a href="#resultats">Résultats 2022</a>
     <a href="#engagements">Engagements</a>
     <a href="#manifeste">Qui sommes-nous</a>
     <a class="nav-cta" href="#rejoindre">Rejoindre</a>
@@ -539,6 +576,57 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
     </div>
   </div>
   <p class="stats-note">Chiffres issus des documents officiels de l'entreprise · PV de CSE, accords, bilans. Tout est vérifiable.</p>
+</section>
+
+<!-- RESULTATS 2022 -->
+<section class="resultats" id="resultats">
+  <span class="section-label">Élections CSE Indigo Park · 28 octobre 2022</span>
+  <h2 class="reveal">Par qui êtes-vous <em>représentés ?</em></h2>
+  <p class="res-intro reveal">Avant de voter en 2026, regardez ce qui s'est passé en 2022. Tous les chiffres proviennent des procès-verbaux officiels du scrutin. Les barres sont à l'échelle des inscrits de chaque collège : elles montrent le vrai poids de chaque organisation.</p>
+
+  <div class="college reveal">
+    <div class="college-head"><h3>1er collège · Employés</h3><div class="meta">964 inscrits · 416 votants au 1er tour · 43%</div></div>
+    <div class="warn">⚠ Quorum non atteint au 1er tour · les sièges ont été attribués au 2e tour · 376 votants · 39%</div>
+    <div class="bar-row"><span class="bar-name">UNIT</span><div class="bar-track"><div class="bar-fill" data-w="17"></div></div><span class="bar-val">164 voix · 6 sièges</span></div>
+    <div class="bar-row"><span class="bar-name">CGT</span><div class="bar-track"><div class="bar-fill" data-w="9.6"></div></div><span class="bar-val">93 voix · 3 sièges</span></div>
+    <div class="bar-row"><span class="bar-name">FO</span><div class="bar-track"><div class="bar-fill" data-w="6.6"></div></div><span class="bar-val">64 voix · 3 sièges</span></div>
+    <div class="bar-row"><span class="bar-name">CFDT</span><div class="bar-track"><div class="bar-fill" data-w="4.9"></div></div><span class="bar-val">47 voix · 1 siège</span></div>
+    <div class="bar-row ghostrow"><span class="bar-name">Abstention</span><div class="bar-track"><div class="bar-fill" data-w="61"></div></div><span class="bar-val">588 non-votants</span></div>
+    <div class="bar-scale">Longueur des barres = part des 964 inscrits du collège</div>
+  </div>
+
+  <div class="callout-588 reveal">
+    <div class="big"><span class="count" data-to="588">0</span><small>employés sur 964</small></div>
+    <p><b>N'ont pas voté.</b> Pendant ce temps, 164 voix ont suffi pour prendre 6 sièges sur 13. La CGT a perdu 18 voix entre les deux tours · même ses propres électeurs ne sont pas revenus. Avec 93 voix sur 964 inscrits, elle ne représente que <b>9,6% des employés</b>.</p>
+  </div>
+
+  <div class="college reveal">
+    <div class="college-head"><h3>2e collège · Agents de maîtrise</h3><div class="meta">328 inscrits · 212 votants · 65% · quorum atteint</div></div>
+    <div class="bar-row"><span class="bar-name">CGT</span><div class="bar-track"><div class="bar-fill" data-w="16.8"></div></div><span class="bar-val">55 voix · 2 sièges</span></div>
+    <div class="bar-row"><span class="bar-name">CFE-CGC</span><div class="bar-track"><div class="bar-fill" data-w="14.6"></div></div><span class="bar-val">48 voix · 1 siège</span></div>
+    <div class="bar-row"><span class="bar-name">CFDT</span><div class="bar-track"><div class="bar-fill" data-w="13.4"></div></div><span class="bar-val">44 voix · 1 siège</span></div>
+    <div class="bar-row"><span class="bar-name">FO</span><div class="bar-track"><div class="bar-fill" data-w="7.9"></div></div><span class="bar-val">26 voix · 0 siège</span></div>
+    <div class="bar-row"><span class="bar-name">UNIT</span><div class="bar-track"><div class="bar-fill" data-w="7.3"></div></div><span class="bar-val">24 voix · 0 siège</span></div>
+    <div class="bar-scale">Longueur des barres = part des 328 inscrits du collège</div>
+  </div>
+
+  <div class="college reveal">
+    <div class="college-head"><h3>3e collège · Cadres</h3><div class="meta">202 inscrits · 127 votants · 63% · quorum atteint</div></div>
+    <div class="bar-row"><span class="bar-name">CFE-CGC</span><div class="bar-track"><div class="bar-fill" data-w="32.2"></div></div><span class="bar-val">65 voix · 2 sièges</span></div>
+    <div class="bar-row"><span class="bar-name">CGT</span><div class="bar-track"><div class="bar-fill" data-w="18.3"></div></div><span class="bar-val">37 voix · 1 siège</span></div>
+    <div class="bar-row"><span class="bar-name">CFDT</span><div class="bar-track"><div class="bar-fill" data-w="6.9"></div></div><span class="bar-val">14 voix · 0 siège</span></div>
+    <div class="bar-row"><span class="bar-name">UNIT</span><div class="bar-track"><div class="bar-fill" data-w="0.5"></div></div><span class="bar-val">0 voix · 0 siège</span></div>
+    <div class="bar-scale">Longueur des barres = part des 202 inscrits du collège</div>
+  </div>
+
+  <div class="res-grid reveal">
+    <div class="res-cell"><b><span class="count" data-to="48">0</span>%</b><span>de participation au 1er tour, tous collèges · 715 votants sur 1 494 inscrits</span></div>
+    <div class="res-cell"><b>12 / 20</b><span>sièges détenus par la CGT et un syndicat maison à eux deux</span></div>
+    <div class="res-cell"><b><span class="count" data-to="257">0</span> voix</b><span>leur total cumulé chez les employés au 2e tour · 27% des 964 inscrits</span></div>
+    <div class="res-cell"><b><span class="count" data-to="73">0</span>%</b><span>des employés n'ont voté ni pour l'un ni pour l'autre</span></div>
+  </div>
+
+  <p class="res-footer reveal">Répartition des 20 sièges : <b>UNIT 6 · CGT 6 · CFE-CGC 3 · FO 3 · CFDT 2</b>. C'est ça, la réalité de ceux qui prétendent vous représenter depuis quatre ans. Chaque chiffre est vérifiable dans les procès-verbaux du scrutin.</p>
 </section>
 
 <!-- ENGAGEMENTS -->
@@ -727,6 +815,12 @@ if (window.gsap && !reduced){
       scrollTrigger:{trigger:el, start:'top 85%'},
       onUpdate(){ el.textContent = obj.v.toFixed(dec).replace('.', ','); }
     });
+  });
+
+  /* barres de résultats 2022 */
+  document.querySelectorAll('.bar-fill').forEach(b => {
+    gsap.to(b, {width: b.dataset.w + '%', duration: 1.3, ease: 'power3.out',
+      scrollTrigger: {trigger: b, start: 'top 92%'}});
   });
 
   /* ENGAGEMENTS : rail horizontal épinglé (desktop) */
