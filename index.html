@@ -330,6 +330,65 @@ nav.scrolled .nav-cta{background:var(--indigo);color:var(--cream) !important;}
 .res-footer{margin-top:2.6rem;font-size:clamp(.95rem,1.5vw,1.05rem);line-height:1.7;color:rgba(244,239,230,.85);max-width:72ch;}
 .res-footer b{color:#B78CFF;}
 
+/* ---------- MUR DES SIGNATURES ---------- */
+.mur{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
+.mur h2{
+  font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;
+  font-size:clamp(2.2rem,6vw,4.8rem);margin-bottom:1.2rem;
+}
+.mur h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--coral);}
+.mur-intro{max-width:64ch;line-height:1.65;color:rgba(43,27,94,.78);margin-bottom:2.6rem;font-size:clamp(.95rem,1.5vw,1.08rem);}
+.mur-counters{display:flex;flex-wrap:wrap;gap:clamp(1.4rem,4vw,3.4rem);margin-bottom:3rem;}
+.mur-counters .mc b{font-weight:900;font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1;letter-spacing:-.03em;color:var(--indigo);display:block;}
+.mur-counters .mc:last-child b{color:var(--coral);}
+.mur-counters .mc span{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(43,27,94,.6);}
+.mur-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1rem;}
+.mur-table{min-width:680px;width:100%;border-collapse:separate;border-spacing:0;}
+.mur-table th{
+  font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(43,27,94,.6);text-align:left;padding:.7rem .6rem;border-bottom:2px solid var(--indigo);
+}
+.mur-table th:not(:first-child){text-align:center;}
+.mur-table td{padding:.55rem .6rem;border-bottom:1px solid rgba(43,27,94,.14);vertical-align:middle;}
+.mur-table td.acc{font-weight:700;font-size:.86rem;color:var(--indigo);line-height:1.3;}
+.mur-table td.acc small{display:block;font-weight:400;font-size:.72rem;color:rgba(43,27,94,.55);}
+.mur-table td:not(.acc){text-align:center;}
+.stamp{
+  display:inline-block;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.6rem;
+  letter-spacing:.1em;color:var(--coral);border:1.5px solid var(--coral);border-radius:4px;
+  padding:.22rem .45rem;transform:rotate(-2deg);will-change:transform;white-space:nowrap;
+}
+tr:nth-child(even) .stamp{transform:rotate(2deg);}
+tr .stamp:nth-child(odd){transform:rotate(-3deg);}
+.mur-total{
+  font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.3rem,3vw,2rem);
+  color:var(--indigo);margin:1.6rem 0 3rem;
+}
+.mur-total b{font-style:normal;font-family:'Archivo',sans-serif;font-weight:900;color:var(--coral);}
+.mur-costs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;}
+.cost-card{
+  background:#FDFBF7;border:2px solid var(--indigo);border-radius:18px;
+  padding:1.5rem 1.4rem 1.7rem;display:flex;flex-direction:column;gap:.7rem;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.cost-card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:8px 10px 0 var(--indigo);}
+.cost-card .chip{
+  align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cream);background:var(--indigo);padding:.35rem .7rem;border-radius:99px;
+}
+.cost-card b{font-weight:900;font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1;color:var(--coral);}
+.cost-card p{font-size:.88rem;line-height:1.55;color:rgba(43,27,94,.78);}
+.mur-principe{
+  margin-top:3.2rem;text-align:center;
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:clamp(1.7rem,4.4vw,3.2rem);color:var(--indigo);
+}
+.mur-principe mark{background:var(--lime);color:var(--indigo);padding:0 .35rem;}
+.mur-note{
+  margin-top:1.6rem;text-align:center;font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;color:rgba(43,27,94,.55);
+}
+
 /* ---------- ENGAGEMENTS ---------- */
 .engagements{padding:clamp(4rem,10vh,7rem) 0 clamp(6rem,14vh,9rem);overflow:hidden;}
 .eng-head{
@@ -497,6 +556,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
   <div class="nav-links">
     <a href="#constat">Le constat</a>
     <a href="#resultats">Résultats 2022</a>
+    <a href="#mur">Le mur</a>
     <a href="#engagements">Engagements</a>
     <a href="#manifeste">Qui sommes-nous</a>
     <a class="nav-cta" href="#rejoindre">Rejoindre</a>
@@ -619,6 +679,69 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
     <div class="bar-scale">Longueur des barres = part des 202 inscrits du collège</div>
   </div>
 
+</section>
+
+<!-- MUR DES SIGNATURES -->
+<section class="mur" id="mur">
+  <span class="section-label">Le mur des signatures</span>
+  <h2 class="reveal">45 signatures. <em>Zéro opposition.</em></h2>
+  <p class="mur-intro reveal">Les cinq organisations représentatives ont signé à l'unanimité tous les accords collectifs des trois dernières années. Aucun vote contre, aucune opposition, aucune abstention structurée. Voici la matrice, accord par accord, et ce que ça a coûté à votre pouvoir d'achat. Chaque ligne vient des textes officiels et des procès-verbaux signés.</p>
+
+  <div class="mur-counters reveal">
+    <div class="mc"><b><span class="count" data-to="9">0</span></b><span>accords</span></div>
+    <div class="mc"><b><span class="count" data-to="5">0</span></b><span>syndicats</span></div>
+    <div class="mc"><b><span class="count" data-to="45">0</span></b><span>signatures</span></div>
+    <div class="mc"><b><span class="count" data-to="0">0</span></b><span>opposition</span></div>
+  </div>
+
+  <div class="mur-scroll">
+    <table class="mur-table" id="murTable">
+      <thead><tr><th>Accord</th><th>CFE-CGC</th><th>CFDT</th><th>CGT</th><th>FO</th><th>UNIT</th></tr></thead>
+      <tbody>
+      <tr><td class="acc">NAO 2025<small>Suppression du plancher 36 €</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">NAO 2026<small>Régression salariale documentée</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">Télétravail 2026<small>Restrictif, aucune indemnité</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">Intéressement 2025-2027<small>Conditionné à l'EBITDA</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">Frais de santé 2026<small>Un acquis, mais indexé PMSS</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">IRP et CSE 2022<small>Subvention syndicale 1 200 €</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">Classifications GPEC 2024<small>Aucune fiche téléopérateur</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">QVCT 2024<small>Rien de spécifique au CNTO</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      <tr><td class="acc">Égalité professionnelle 2024<small>0 femme déléguée syndicale</small></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td><td><span class="stamp">SIGNÉ</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mur-total reveal">Neuf accords, cinq syndicats, quarante-cinq signatures. <b>Zéro opposition.</b></p>
+
+  <div class="mur-costs">
+    <div class="cost-card reveal">
+      <span class="chip">NAO 2026</span>
+      <b>−168 € / an</b>
+      <p>Pour une téléopératrice à 2 000 € brut, sur le seul différentiel d'augmentation. Plancher de 36 € supprimé. Pendant ce temps, +63% de bénéfice net du Groupe en 2024, à 85 millions d'euros.</p>
+    </div>
+    <div class="cost-card reveal">
+      <span class="chip">Télétravail 2026</span>
+      <b>0 € d'indemnité</b>
+      <p>Ni électricité, ni internet, ni chauffage, alors que l'URSSAF fixe le forfait exonéré à 2,70 € par jour. Et 0 jour de télétravail effectif pour les téléopérateurs du CNTO, pourtant éligibles.</p>
+    </div>
+    <div class="cost-card reveal">
+      <span class="chip">Intéressement 2025-2027</span>
+      <b>0 € garanti</b>
+      <p>Tout est conditionné à l'EBITDA : si l'entreprise investit, les salariés sont punis sans y être pour rien. Arrêt maladie ordinaire exclu du temps de présence. Sous 93% d'assiduité, la part tombe à zéro.</p>
+    </div>
+    <div class="cost-card reveal">
+      <span class="chip">Frais de santé 2026</span>
+      <b>Hausse mécanique</b>
+      <p>Un vrai acquis (50 à 126 € de gain par an), mais des cotisations exprimées en pourcentage du PMSS, revalorisé chaque année. Le gain annoncé s'érode donc automatiquement.</p>
+    </div>
+    <div class="cost-card reveal">
+      <span class="chip">IRP et CSE 2022</span>
+      <b>0,75 € / salarié</b>
+      <p>La subvention de fonctionnement : 1 200 € par an pour un syndicat au seuil de représentativité, à peine 400 € de plus pour un syndicat majoritaire. Impossible de faire une vraie campagne nationale avec ça.</p>
+    </div>
+  </div>
+
+  <p class="mur-principe reveal">« Ce qui régresse <mark>ne se signe pas</mark>. Point. »</p>
+  <p class="mur-note">Sources : accords collectifs UES Indigo · convention collective IDCC 1090 · PV officiels du CSE · rapports d'expertise mandatés par le CSE. Chaque chiffre est vérifiable.</p>
 </section>
 
 <!-- ENGAGEMENTS -->
@@ -813,6 +936,14 @@ if (window.gsap && !reduced){
   document.querySelectorAll('.bar-fill').forEach(b => {
     gsap.to(b, {width: b.dataset.w + '%', duration: 1.3, ease: 'power3.out',
       scrollTrigger: {trigger: b, start: 'top 92%'}});
+  });
+
+  /* mur des signatures : les 45 tampons claquent un par un */
+  gsap.from('#murTable .stamp', {
+    scale: 2.4, opacity: 0, rotation: () => gsap.utils.random(-24, 24),
+    duration: .4, ease: 'back.out(2.2)',
+    stagger: {each: .045, from: 'start'},
+    scrollTrigger: {trigger: '#murTable', start: 'top 78%'}
   });
 
   /* ENGAGEMENTS : rail horizontal épinglé (desktop) */
