@@ -295,30 +295,78 @@ nav.scrolled .nav-cta{background:var(--indigo);color:var(--cream) !important;}
 }
 
 /* ---------- ENGAGEMENTS ---------- */
-.engagements{padding:clamp(4rem,10vh,7rem) clamp(1.2rem,4vw,3rem) clamp(6rem,14vh,9rem);}
-.eng-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.4rem;margin-bottom:clamp(2.5rem,6vh,4rem);}
+.engagements{padding:clamp(4rem,10vh,7rem) 0 clamp(6rem,14vh,9rem);overflow:hidden;}
+.eng-head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.4rem;
+  margin-bottom:clamp(2.5rem,6vh,4rem);padding:0 clamp(1.2rem,4vw,3rem);
+}
 .eng-head h2{
   font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.95;
   font-size:clamp(2.6rem,7vw,6rem);
 }
 .eng-head h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--coral);}
-.eng-head p{max-width:36ch;font-size:1rem;line-height:1.6;color:rgba(43,27,94,.7);}
-.eng-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.1rem;}
-.eng-card{
-  background:#FDFBF7;border:2px solid var(--indigo);border-radius:18px;
-  padding:1.8rem 1.6rem 2rem;display:flex;flex-direction:column;gap:1rem;
-  position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+.eng-progress{display:flex;flex-direction:column;gap:.6rem;align-items:flex-end;}
+.eng-progress .nums{font-family:'JetBrains Mono',monospace;font-size:.85rem;letter-spacing:.15em;color:var(--indigo);}
+.eng-progress .nums b{font-size:1.6rem;color:var(--coral);}
+.eng-progress .bar{width:180px;height:2px;background:rgba(43,27,94,.15);overflow:hidden;}
+.eng-progress .bar i{display:block;height:100%;width:0;background:var(--coral);}
+@media (max-width:899px){ .eng-progress{display:none;} }
+
+.eng-track-wrap{position:relative;}
+.eng-track{display:flex;flex-direction:column;gap:1.4rem;padding:0 clamp(1.2rem,4vw,3rem);}
+
+.eng-panel{
+  position:relative;border-radius:26px;overflow:hidden;
+  padding:clamp(1.8rem,4vw,3.4rem);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:1.1rem;
+  min-height:440px;
+  box-shadow:0 24px 60px rgba(31,19,71,.18);
 }
-.eng-card:hover{transform:translateY(-8px) rotate(-.5deg);box-shadow:8px 10px 0 var(--indigo);}
-.eng-card:nth-child(even):hover{transform:translateY(-8px) rotate(.5deg);}
-.eng-num{
-  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.8rem;letter-spacing:.15em;
-  color:var(--cream);background:var(--indigo);align-self:flex-start;padding:.4rem .8rem;border-radius:99px;
+/* mobile / défaut : empilement collant */
+@media (max-width:899px){
+  .eng-panel{position:sticky;top:88px;min-height:62svh;}
+  .eng-panel:nth-child(2){top:96px;}
+  .eng-panel:nth-child(3){top:104px;}
+  .eng-panel:nth-child(4){top:112px;}
+  .eng-panel:nth-child(5){top:120px;}
+  .eng-panel:nth-child(6){top:128px;}
 }
-.eng-card:nth-child(3n+1) .eng-num{background:var(--coral);}
-.eng-card:nth-child(3n) .eng-num{background:var(--indigo);}
-.eng-card h3{font-weight:900;font-size:clamp(1.2rem,2vw,1.45rem);line-height:1.15;text-transform:uppercase;letter-spacing:-.01em;}
-.eng-card p{font-size:.94rem;line-height:1.6;color:rgba(43,27,94,.75);}
+/* desktop : rail horizontal activé par JS */
+.engagements.is-horizontal .eng-track{
+  flex-direction:row;align-items:stretch;gap:clamp(1.4rem,2.5vw,2.5rem);
+  width:max-content;will-change:transform;
+}
+.engagements.is-horizontal .eng-panel{
+  position:relative;top:0;width:min(62vw,880px);height:min(72vh,640px);min-height:0;flex-shrink:0;
+}
+.engagements.is-horizontal .eng-panel:last-child{margin-right:clamp(1.2rem,4vw,3rem);}
+
+/* palettes des panneaux */
+.eng-panel .ghost{
+  position:absolute;top:-6%;right:-2%;z-index:0;pointer-events:none;
+  font-family:'Instrument Serif',serif;font-size:clamp(11rem,30vw,26rem);line-height:1;
+  opacity:.14;will-change:transform;
+}
+.eng-panel .chip{
+  position:relative;z-index:1;align-self:flex-start;
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:.5rem 1rem;border-radius:99px;border:1.5px solid currentColor;
+}
+.eng-panel h3{
+  position:relative;z-index:1;font-weight:900;text-transform:uppercase;letter-spacing:-.015em;
+  font-size:clamp(1.5rem,3.4vw,3.1rem);line-height:1.02;max-width:16ch;
+}
+.eng-panel p{
+  position:relative;z-index:1;font-size:clamp(.92rem,1.4vw,1.12rem);line-height:1.6;max-width:52ch;opacity:.85;
+}
+.p-dark{background:var(--indigo);color:var(--cream);}
+.p-dark .ghost{color:#B78CFF;}
+.p-light{background:#FDFBF7;color:var(--indigo);border:2px solid var(--indigo);}
+.p-light .ghost{color:var(--coral);opacity:.1;}
+.p-electric{background:var(--coral);color:var(--cream);}
+.p-electric .ghost{color:var(--cream);}
+.p-lavande{background:var(--lime);color:var(--indigo);}
+.p-lavande .ghost{color:var(--indigo);opacity:.12;}
 
 /* ---------- MANIFESTE ---------- */
 .manifeste{background:var(--indigo);color:var(--cream);padding:clamp(5rem,14vh,9rem) clamp(1.2rem,4vw,3rem);}
@@ -497,39 +545,50 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
 <section class="engagements" id="engagements">
   <div class="eng-head">
     <h2 class="reveal">Nos six <em>engagements.</em></h2>
-    <p class="reveal">Pas un catalogue de promesses. Six chantiers concrets, tenus par des salariés du terrain, mesurables dès la première année.</p>
+    <div class="eng-progress reveal">
+      <div class="nums"><b id="engIdx">01</b> / 06</div>
+      <div class="bar"><i id="engFill"></i></div>
+    </div>
   </div>
-  <div class="eng-grid">
-    <article class="eng-card reveal">
-      <span class="eng-num">01</span>
-      <h3>Des dotations dignes de votre travail</h3>
-      <p>Chèques vacances, chèques cadeaux, aides familles, pouvoir d'achat : que chaque euro du budget CSE retourne aux salariés, réparti équitablement.</p>
-    </article>
-    <article class="eng-card reveal">
-      <span class="eng-num">02</span>
-      <h3>Vos droits, défendus pleinement</h3>
-      <p>Accords d'entreprise, convention collective, primes, ancienneté : chaque droit examiné, défendu avec sérieux, expliqué en langage clair.</p>
-    </article>
-    <article class="eng-card reveal">
-      <span class="eng-num">03</span>
-      <h3>Plannings et temps de repos respectés</h3>
-      <p>Respect strict des coupures, anticipation des modifications, vigilance sur la charge · téléopération, exploitation, maintenance, voirie.</p>
-    </article>
-    <article class="eng-card reveal">
-      <span class="eng-num">04</span>
-      <h3>Une sécurité réelle sur le terrain</h3>
-      <p>Travail isolé, agressions, dotations matérielles, procédures : obtenir des engagements chiffrés de la direction, pas des promesses.</p>
-    </article>
-    <article class="eng-card reveal">
-      <span class="eng-num">05</span>
-      <h3>Formation et évolution interne</h3>
-      <p>De vrais parcours entre les métiers, un accompagnement des promotions internes, la reconnaissance de l'ancienneté et de l'expertise.</p>
-    </article>
-    <article class="eng-card reveal">
-      <span class="eng-num">06</span>
-      <h3>Transparence et écoute directe</h3>
-      <p>Comptes-rendus clairs sous 7 jours, chaque vote expliqué, des permanences sur les sites, des remontées anonymes possibles.</p>
-    </article>
+  <div class="eng-track-wrap" id="engWrap">
+    <div class="eng-track" id="engTrack">
+      <article class="eng-panel p-dark">
+        <span class="ghost" aria-hidden="true">01</span>
+        <span class="chip">Engagement 01</span>
+        <h3>Des dotations dignes de votre travail</h3>
+        <p>Chèques vacances, chèques cadeaux, aides familles, pouvoir d'achat : que chaque euro du budget CSE retourne aux salariés, réparti équitablement.</p>
+      </article>
+      <article class="eng-panel p-light">
+        <span class="ghost" aria-hidden="true">02</span>
+        <span class="chip">Engagement 02</span>
+        <h3>Vos droits, défendus pleinement</h3>
+        <p>Accords d'entreprise, convention collective, primes, ancienneté : chaque droit examiné, défendu avec sérieux, expliqué en langage clair.</p>
+      </article>
+      <article class="eng-panel p-electric">
+        <span class="ghost" aria-hidden="true">03</span>
+        <span class="chip">Engagement 03</span>
+        <h3>Plannings et temps de repos respectés</h3>
+        <p>Respect strict des coupures, anticipation des modifications, vigilance sur la charge · téléopération, exploitation, maintenance, voirie.</p>
+      </article>
+      <article class="eng-panel p-light">
+        <span class="ghost" aria-hidden="true">04</span>
+        <span class="chip">Engagement 04</span>
+        <h3>Une sécurité réelle sur le terrain</h3>
+        <p>Travail isolé, agressions, dotations matérielles, procédures : obtenir des engagements chiffrés de la direction, pas des promesses.</p>
+      </article>
+      <article class="eng-panel p-dark">
+        <span class="ghost" aria-hidden="true">05</span>
+        <span class="chip">Engagement 05</span>
+        <h3>Formation et évolution interne</h3>
+        <p>De vrais parcours entre les métiers, un accompagnement des promotions internes, la reconnaissance de l'ancienneté et de l'expertise.</p>
+      </article>
+      <article class="eng-panel p-lavande">
+        <span class="ghost" aria-hidden="true">06</span>
+        <span class="chip">Engagement 06</span>
+        <h3>Transparence et écoute directe</h3>
+        <p>Comptes-rendus clairs sous 7 jours, chaque vote expliqué, des permanences sur les sites, des remontées anonymes possibles.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -567,7 +626,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
   addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`; });
   (function loop(){ rx += (mx-rx)*.14; ry += (my-ry)*.14; ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
-  document.querySelectorAll('a,button,.eng-card').forEach(el => {
+  document.querySelectorAll('a,button,.eng-panel').forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
     el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
   });
@@ -667,6 +726,52 @@ if (window.gsap && !reduced){
       v:to, duration:1.6, ease:'power2.out',
       scrollTrigger:{trigger:el, start:'top 85%'},
       onUpdate(){ el.textContent = obj.v.toFixed(dec).replace('.', ','); }
+    });
+  });
+
+  /* ENGAGEMENTS : rail horizontal épinglé (desktop) */
+  const mm = gsap.matchMedia();
+  mm.add('(min-width:900px)', () => {
+    const section = document.getElementById('engagements');
+    const wrap = document.getElementById('engWrap');
+    const track = document.getElementById('engTrack');
+    const idxEl = document.getElementById('engIdx');
+    const fill = document.getElementById('engFill');
+    section.classList.add('is-horizontal');
+    const amount = () => track.scrollWidth - window.innerWidth;
+
+    const tween = gsap.to(track, {
+      x: () => -amount(), ease: 'none',
+      scrollTrigger: {
+        trigger: wrap, start: 'top 12%', end: () => '+=' + amount(),
+        pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
+        onUpdate(self){
+          const i = Math.min(6, Math.floor(self.progress * 6) + 1);
+          idxEl.textContent = String(i).padStart(2, '0');
+          fill.style.width = (self.progress * 100) + '%';
+        }
+      }
+    });
+
+    document.querySelectorAll('.eng-panel').forEach(p => {
+      gsap.from(p.querySelectorAll('.chip, h3, p'), {
+        y: 50, opacity: 0, stagger: .09, duration: .7, ease: 'power3.out',
+        scrollTrigger: {trigger: p, containerAnimation: tween, start: 'left 78%'}
+      });
+      gsap.fromTo(p.querySelector('.ghost'), {xPercent: 26}, {
+        xPercent: -14, ease: 'none',
+        scrollTrigger: {trigger: p, containerAnimation: tween, start: 'left right', end: 'right left', scrub: true}
+      });
+    });
+
+    return () => { section.classList.remove('is-horizontal'); };
+  });
+
+  /* ENGAGEMENTS : entrée des cartes empilées (mobile) */
+  mm.add('(max-width:899px)', () => {
+    document.querySelectorAll('.eng-panel').forEach(p => {
+      gsap.from(p, {y: 60, opacity: 0, duration: .8, ease: 'power3.out',
+        scrollTrigger: {trigger: p, start: 'top 92%'}});
     });
   });
 
