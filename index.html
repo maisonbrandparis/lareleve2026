@@ -171,28 +171,28 @@ nav.scrolled .nav-cta{background:var(--indigo);color:var(--cream) !important;}
 
 /* ---------- HERO ---------- */
 .hero{
-  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(6rem,12vh,9rem) clamp(1.2rem,4vw,3rem) 0;position:relative;
+  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-start;
+  padding:clamp(4.6rem,9vh,6.2rem) clamp(1.2rem,4vw,3rem) 0;position:relative;
   background:
-    linear-gradient(180deg, rgba(18,11,46,.35) 0%, rgba(18,11,46,.42) 55%, rgba(18,11,46,.82) 100%),
-    url('hero-desktop.jpg') center/cover no-repeat #120B2E;
+    linear-gradient(180deg, rgba(18,11,46,.62) 0%, rgba(18,11,46,.4) 46%, rgba(18,11,46,.22) 78%, rgba(18,11,46,.34) 100%),
+    url('hero-desktop.jpg') center bottom/cover no-repeat #120B2E;
 }
 @media (max-width:768px){
   .hero{
     background:
-      linear-gradient(180deg, rgba(18,11,46,.38) 0%, rgba(18,11,46,.45) 55%, rgba(18,11,46,.85) 100%),
-      url('hero-mobile.jpg') center/cover no-repeat #120B2E;
+      linear-gradient(180deg, rgba(18,11,46,.66) 0%, rgba(18,11,46,.42) 46%, rgba(18,11,46,.2) 78%, rgba(18,11,46,.34) 100%),
+      url('hero-mobile.jpg') center bottom/cover no-repeat #120B2E;
   }
 }
 .hero-eyebrow{
   font-family:'JetBrains Mono',monospace;font-size:clamp(.65rem,1.4vw,.8rem);
   letter-spacing:.22em;text-transform:uppercase;color:#B78CFF;
-  display:flex;align-items:center;gap:.8rem;margin-bottom:clamp(1rem,3vh,2rem);
+  display:flex;align-items:center;gap:.8rem;margin-bottom:clamp(.7rem,2vh,1.2rem);
 }
 .hero-eyebrow::before{content:'';width:34px;height:2px;background:#B78CFF;}
 .hero-title{
   font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.03em;
-  font-size:clamp(4.2rem,17vw,15.5rem);color:var(--cream);
+  font-size:clamp(3.6rem,13vw,10.5rem);color:var(--cream);
   text-shadow:0 6px 40px rgba(0,0,0,.35);
 }
 .hero-title .line{display:block;overflow:hidden;}
@@ -203,7 +203,7 @@ nav.scrolled .nav-cta{background:var(--indigo);color:var(--cream) !important;}
 }
 .hero-sub{
   display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
-  gap:1.5rem;margin-top:clamp(1.6rem,4vh,3rem);
+  gap:1.2rem;margin-top:clamp(1rem,2.5vh,1.8rem);
 }
 .hero-slogan{
   font-family:'Instrument Serif',serif;font-style:italic;
