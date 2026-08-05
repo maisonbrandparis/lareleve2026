@@ -399,6 +399,54 @@ tr .stamp:nth-child(odd){transform:rotate(-3deg);}
 .scandale-card b{font-weight:900;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.15;text-transform:uppercase;letter-spacing:-.01em;}
 .scandale-card p{font-size:.86rem;line-height:1.6;color:rgba(244,239,230,.8);}
 
+/* ---------- EQUIPE ---------- */
+.equipe{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
+.equipe h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-size:clamp(2.2rem,6vw,4.8rem);margin-bottom:2.4rem;}
+.equipe h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--coral);}
+.equipe-grid{display:grid;grid-template-columns:minmax(240px,340px) 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start;}
+@media (max-width:820px){ .equipe-grid{grid-template-columns:1fr;} }
+.parite-card{background:var(--indigo);color:var(--cream);border-radius:22px;padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.4rem;}
+.parite-card .lab{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#B78CFF;}
+.parite-card .ratio{font-weight:900;font-size:clamp(3.4rem,8vw,5.4rem);line-height:1;letter-spacing:-.03em;}
+.parite-card .ratio s{text-decoration:none;color:#B78CFF;}
+.parite-card p{font-size:.9rem;line-height:1.55;color:rgba(244,239,230,.78);margin-top:.5rem;}
+.parite-card .sep{height:1px;background:rgba(244,239,230,.2);margin:1.4rem 0 1rem;}
+.equipe-text p{font-size:clamp(.98rem,1.6vw,1.12rem);line-height:1.7;color:rgba(43,27,94,.82);margin-bottom:1.1rem;max-width:62ch;}
+.equipe-text p b{color:var(--indigo);}
+.equipe-text .engage{border-left:3px solid var(--coral);padding-left:1.2rem;}
+
+/* ---------- METHODE ---------- */
+.methode{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
+.methode h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-size:clamp(2.2rem,6vw,4.8rem);margin-bottom:1rem;}
+.methode h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--coral);}
+.methode-intro{max-width:62ch;line-height:1.65;color:rgba(43,27,94,.78);margin-bottom:2.6rem;font-size:clamp(.95rem,1.5vw,1.08rem);}
+.methode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem;}
+.methode-card{background:#FDFBF7;border:2px solid var(--indigo);border-radius:18px;padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:.8rem;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;}
+.methode-card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:8px 10px 0 var(--indigo);}
+.methode-card .lab{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);}
+.methode-card h3{font-weight:900;text-transform:uppercase;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.15;letter-spacing:-.01em;}
+.methode-card p{font-size:.92rem;line-height:1.6;color:rgba(43,27,94,.78);}
+
+/* ---------- VU DE L'INTERIEUR ---------- */
+.interieur{background:var(--indigo);color:var(--cream);padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
+.interieur .section-label{color:#B78CFF;}
+.interieur h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-size:clamp(2.2rem,6vw,4.4rem);margin-bottom:1.2rem;}
+.interieur h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:#B78CFF;}
+.interieur-lead{max-width:64ch;line-height:1.7;color:rgba(244,239,230,.85);font-size:clamp(.98rem,1.6vw,1.12rem);margin-bottom:.9rem;}
+.interieur-lead b{color:#B78CFF;}
+.interieur-sign{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,230,.55);margin-bottom:2.6rem;}
+.vs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem;}
+.vs-card{border:1px solid rgba(244,239,230,.22);border-radius:18px;padding:1.7rem 1.5rem;background:rgba(244,239,230,.04);}
+.vs-card.win{border-color:#B78CFF;background:rgba(183,140,255,.08);}
+.vs-card h3{font-weight:900;text-transform:uppercase;font-size:clamp(1rem,1.8vw,1.25rem);margin-bottom:1.1rem;letter-spacing:-.01em;}
+.vs-card ul{list-style:none;display:flex;flex-direction:column;gap:.85rem;}
+.vs-card li{font-size:.92rem;line-height:1.5;color:rgba(244,239,230,.82);padding-left:1.4rem;position:relative;}
+.vs-card li::before{content:'';position:absolute;left:0;top:.5em;width:8px;height:1.5px;background:rgba(244,239,230,.5);}
+.vs-card.win li::before{background:#B78CFF;height:2px;}
+.vs-card li b{color:var(--cream);}
+.interieur-punch{margin-top:2.4rem;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.4rem,3.4vw,2.4rem);line-height:1.35;max-width:44ch;}
+.interieur-punch mark{background:#B78CFF;color:var(--indigo);padding:0 .3rem;font-style:normal;}
+
 /* ---------- ENGAGEMENTS ---------- */
 .engagements{padding:clamp(4rem,10vh,7rem) 0 clamp(6rem,14vh,9rem);overflow:hidden;}
 .eng-head{
@@ -474,18 +522,6 @@ tr .stamp:nth-child(odd){transform:rotate(-3deg);}
 .p-lavande .ghost{color:var(--indigo);opacity:.12;}
 
 /* ---------- MANIFESTE ---------- */
-.manifeste{background:var(--indigo);color:var(--cream);padding:clamp(5rem,14vh,9rem) clamp(1.2rem,4vw,3rem);}
-.manifeste .section-label{color:var(--coral);}
-.manifeste-text{
-  font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,3.8vw,3rem);line-height:1.32;max-width:1000px;
-}
-.manifeste-text .w{display:inline-block;opacity:.18;transition:opacity .3s;}
-.manifeste-text em{font-style:italic;color:var(--lime);}
-.manifeste-sign{
-  margin-top:3rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;
-  letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,230,.6);
-}
-
 /* ---------- REJOINDRE ---------- */
 .rejoindre{
   padding:clamp(6rem,16vh,10rem) clamp(1.2rem,4vw,3rem);text-align:center;
@@ -511,12 +547,22 @@ tr .stamp:nth-child(odd){transform:rotate(-3deg);}
 /* ---------- FOOTER ---------- */
 footer{
   background:var(--indigo);color:var(--cream);
-  padding:2.2rem clamp(1.2rem,4vw,3rem);
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;
+  padding:clamp(2.6rem,6vh,4rem) clamp(1.2rem,4vw,3rem) 1.8rem;
 }
-footer .f-logo{font-weight:900;text-transform:uppercase;font-size:1rem;}
-footer .f-logo b{color:var(--coral);}
-footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.12em;color:rgba(244,239,230,.6);}
+.f-top{display:grid;grid-template-columns:minmax(220px,1.4fr) repeat(3,minmax(140px,1fr));gap:2rem;padding-bottom:2.2rem;}
+@media (max-width:820px){ .f-top{grid-template-columns:1fr 1fr;} }
+@media (max-width:520px){ .f-top{grid-template-columns:1fr;gap:1.6rem;} }
+.f-logo{font-weight:900;text-transform:uppercase;font-size:1.3rem;margin-bottom:.7rem;}
+.f-logo b{color:#B78CFF;}
+.f-brand p{font-size:.88rem;line-height:1.6;color:rgba(244,239,230,.7);max-width:34ch;}
+.f-col h4{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#B78CFF;margin-bottom:.9rem;font-weight:400;}
+.f-col a,.f-col span{display:block;font-size:.88rem;line-height:1.7;color:rgba(244,239,230,.75);text-decoration:none;transition:color .25s;}
+.f-col a:hover{color:#B78CFF;}
+.f-bottom{
+  border-top:1px solid rgba(244,239,230,.16);padding-top:1.4rem;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;
+}
+.f-bottom p{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.1em;color:rgba(244,239,230,.5);}
 
 /* ---------- REVEALS ---------- */
 .reveal{opacity:0;transform:translateY(46px);}
@@ -564,11 +610,10 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
 <nav id="nav">
   <a class="nav-logo" href="#top">La Relève<b>.</b></a>
   <div class="nav-links">
-    <a href="#constat">Le constat</a>
+    <a href="#equipe">Qui nous sommes</a>
     <a href="#resultats">Résultats 2022</a>
     <a href="#mur">Le mur</a>
-    <a href="#engagements">Engagements</a>
-    <a href="#manifeste">Qui sommes-nous</a>
+    <a href="#engagements">Programme</a>
     <a class="nav-cta" href="#rejoindre">Rejoindre</a>
   </div>
 </nav>
@@ -581,8 +626,8 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
     <span class="line"><span>Relève<em>.</em></span></span>
   </h1>
   <div class="hero-sub">
-    <div class="hero-slogan reveal">Place aux <mark>actes</mark>.</div>
-    <p class="hero-desc reveal">La liste des salariés qui veulent un vrai contre-pouvoir au CSE. Construite par le terrain, pour le terrain.</p>
+    <div class="hero-slogan reveal">Un syndicat utile, <mark>ne signe pas tout</mark>.</div>
+    <p class="hero-desc reveal">Cinq syndicats représentatifs. Cinq signataires unanimes. Zéro contre-pouvoir. La Relève est la liste indépendante des salarié·es de l'UES Indigo. Elle propose, elle refuse, elle rend des comptes.</p>
   </div>
   <div class="hero-scroll"><i></i>Faites défiler</div>
 </header>
@@ -613,6 +658,27 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
   <div class="constat-thesis">
     <h2 class="reveal">Quand tout le monde signe, <em>plus personne ne défend.</em></h2>
     <p class="reveal">Depuis des années, chaque accord, chaque vote, chaque décision passe sans une seule voix contre. Résultat : des décisions validées en bloc, loin du quotidien du terrain. La Relève, c'est la liste qui lit tout, qui questionne tout, et qui dit non quand il faut dire non.</p>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="equipe" id="equipe">
+  <span class="section-label">Qui nous sommes</span>
+  <h2 class="reveal">Des femmes et des hommes. <em>Enfin.</em></h2>
+  <div class="equipe-grid">
+    <div class="parite-card reveal">
+      <span class="lab">Femmes &amp; hommes</span>
+      <div class="ratio"><s><span class="count" data-to="0">0</span></s> / <span class="count" data-to="11">0</span></div>
+      <p>Femmes parmi les 11 délégués signataires des accords qui décident de vos salaires.</p>
+      <div class="sep"></div>
+      <span class="lab">Parité</span>
+      <p>Sur nos listes, la loi comme plancher, pas comme plafond.</p>
+    </div>
+    <div class="equipe-text">
+      <p class="reveal">Agents de terrain, téléopératrices et téléopérateurs, chefs d'équipe, agents de maîtrise · <b>la liste La Relève ressemble aux équipes qu'elle veut représenter.</b> Toutes les entités, tous les métiers, les deux sexes.</p>
+      <p class="reveal">Sur 11 délégués signataires des accords : <b>zéro femme</b>, pour un effectif qui en compte 20%. Ce n'est pas un détail, c'est le symptôme d'une représentation figée. La direction, pourtant loin d'être exemplaire, compte 28% de femmes dans ses instances dirigeantes. Les syndicats sont en retard sur le patron.</p>
+      <p class="reveal engage"><b>Notre engagement :</b> la première liste paritaire par construction, portée par des gens de terrain · pas des appareils, pas des carrières syndicales. Des collègues qui connaissent le travail parce qu'ils le font.</p>
+    </div>
   </div>
 </section>
 
@@ -784,7 +850,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
 <!-- ENGAGEMENTS -->
 <section class="engagements" id="engagements">
   <div class="eng-head">
-    <h2 class="reveal">Nos six <em>engagements.</em></h2>
+    <h2 class="reveal">Le programme. <em>Six priorités.</em></h2>
     <div class="eng-progress reveal">
       <div class="nums"><b id="engIdx">01</b> / 06</div>
       <div class="bar"><i id="engFill"></i></div>
@@ -794,63 +860,140 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:
     <div class="eng-track" id="engTrack">
       <article class="eng-panel p-dark">
         <span class="ghost" aria-hidden="true">01</span>
-        <span class="chip">Engagement 01</span>
-        <h3>Des dotations dignes de votre travail</h3>
-        <p>Chèques vacances, chèques cadeaux, aides familles, pouvoir d'achat : que chaque euro du budget CSE retourne aux salariés, réparti équitablement.</p>
+        <span class="chip">Pouvoir d'achat · Salaires</span>
+        <h3>Une augmentation générale en euros, pas en pourcentage</h3>
+        <p>Les pourcentages creusent l'écart entre le haut et le bas de la grille. L'inflation, elle, frappe tout le monde pareil. La même somme pour chacun, du terrain à l'encadrement, plus le rétablissement du plancher supprimé en 2026 et une prime compensant la régression.</p>
       </article>
       <article class="eng-panel p-light">
         <span class="ghost" aria-hidden="true">02</span>
-        <span class="chip">Engagement 02</span>
-        <h3>Vos droits, défendus pleinement</h3>
-        <p>Accords d'entreprise, convention collective, primes, ancienneté : chaque droit examiné, défendu avec sérieux, expliqué en langage clair.</p>
+        <span class="chip">Sécurité · Agressions et santé</span>
+        <h3>Une prime pour chaque agression subie</h3>
+        <p>Se faire agresser au travail ne peut pas être un risque du métier qui se solde par un rapport d'incident. Une prime pour chaque agression subie, un droit de retrait garanti, zéro sanction pour le salarié qui se protège, et des engagements chiffrés sur le travail isolé.</p>
       </article>
       <article class="eng-panel p-electric">
         <span class="ghost" aria-hidden="true">03</span>
-        <span class="chip">Engagement 03</span>
-        <h3>Plannings et temps de repos respectés</h3>
-        <p>Respect strict des coupures, anticipation des modifications, vigilance sur la charge · téléopération, exploitation, maintenance, voirie.</p>
+        <span class="chip">Dignité · Management</span>
+        <h3>Une procédure indépendante, enfin</h3>
+        <p>Face au management toxique, la procédure interne protège l'institution avant les personnes. Ça suffit. Une procédure indépendante, des enquêtes réelles, des sanctions réelles, et un baromètre social annuel au lieu d'un tous les deux ans.</p>
       </article>
       <article class="eng-panel p-light">
         <span class="ghost" aria-hidden="true">04</span>
-        <span class="chip">Engagement 04</span>
-        <h3>Une sécurité réelle sur le terrain</h3>
-        <p>Travail isolé, agressions, dotations matérielles, procédures : obtenir des engagements chiffrés de la direction, pas des promesses.</p>
+        <span class="chip">Téléopération · CNTO</span>
+        <h3>Reconnaître le métier de téléopérateur</h3>
+        <p>Vous gérez 670 parkings, les personnes bloquées, les femmes seules la nuit, les secours, les insultes. Payés comme un poste d'exécution de base. Une fiche métier dédiée, une revalorisation de l'échelon, le télétravail ouvert, et l'arrêt immédiat des écoutes installées sans consultation du CSE.</p>
       </article>
       <article class="eng-panel p-dark">
         <span class="ghost" aria-hidden="true">05</span>
-        <span class="chip">Engagement 05</span>
-        <h3>Formation et évolution interne</h3>
-        <p>De vrais parcours entre les métiers, un accompagnement des promotions internes, la reconnaissance de l'ancienneté et de l'expertise.</p>
+        <span class="chip">Télétravail et frais</span>
+        <h3>2,70 € par jour, comme partout en France</h3>
+        <p>Électricité, internet, chauffage : quand vous travaillez chez vous, c'est vous qui payez. Zéro euro d'indemnité aujourd'hui. Nous demandons le forfait légal, un accord à durée indéterminée, et le télétravail réellement ouvert aux fonctions back-office.</p>
       </article>
       <article class="eng-panel p-lavande">
         <span class="ghost" aria-hidden="true">06</span>
-        <span class="chip">Engagement 06</span>
-        <h3>Transparence et écoute directe</h3>
-        <p>Comptes-rendus clairs sous 7 jours, chaque vote expliqué, des permanences sur les sites, des remontées anonymes possibles.</p>
+        <span class="chip">Transparence · Vos droits</span>
+        <h3>Vous saurez qui a voté quoi</h3>
+        <p>Compte rendu clair sous 7 jours après chaque CSE, chaque vote expliqué et nominatif, des permanences sur les sites, des remontées anonymes possibles. Et le retour des dotations à leur niveau normal, fini les Noëls divisés par deux.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- MANIFESTE -->
-<section class="manifeste" id="manifeste">
+<!-- VU DE L'INTERIEUR -->
+<section class="interieur" id="interieur">
   <span class="section-label">Vu de l'intérieur</span>
-  <p class="manifeste-text" id="manifesteText">Nous étions dans la salle. Nous avons lu les procès-verbaux, les accords, les bilans. Nous savons ce qui se signe, et ce que ça change ou pas sur vos fiches de paie et vos plannings. La Relève est portée par des salariés du terrain : téléopération, exploitation, maintenance, voirie. <em>Pas des promesses. Des actes.</em></p>
-  <div class="manifeste-sign">La Relève · liste de salariés de l'UES Indigo</div>
+  <h2 class="reveal">Nous y étions. Voici ce que <em>les PV ne disent pas.</em></h2>
+  <p class="interieur-lead reveal">Nous avons siégé dans ces réunions de CSE. Nous avons vu comment ça se passe, de l'intérieur. Pas une seule vraie proposition portée jusqu'au bout. Des interventions calibrées pour le procès-verbal · parler longtemps, parler souvent, pour que le PV montre qui a parlé le plus. Et à la fin ? <b>Des NAO à zéro. Tous les accords signés.</b></p>
+  <p class="interieur-sign">Membres fondateurs de La Relève, présents en réunion de CSE</p>
+  <div class="vs-grid">
+    <div class="vs-card reveal">
+      <h3>Ce que les PV montrent</h3>
+      <ul>
+        <li><b>Beaucoup de prises de parole</b> · soigneusement consignées</li>
+        <li><b>Des déclarations solennelles</b> · sans suite</li>
+        <li><b>De la présence</b> · pour la photo, pour le mandat</li>
+      </ul>
+    </div>
+    <div class="vs-card reveal">
+      <h3>Ce que vous avez obtenu</h3>
+      <ul>
+        <li><b>NAO : zéro</b> avancée réelle pour les salaires</li>
+        <li><b>Tous les accords signés</b> · y compris les reculs</li>
+        <li><b>Aucun rapport de force</b> construit en quatre ans</li>
+      </ul>
+    </div>
+    <div class="vs-card win reveal">
+      <h3>Ce que nous ferons</h3>
+      <ul>
+        <li><b>Ce qui régresse ne se signe pas</b> · sans exception</li>
+        <li><b>Un compte rendu nominatif</b> après chaque CSE</li>
+        <li><b>Un rapport de force</b> construit dès la première année</li>
+      </ul>
+    </div>
+  </div>
+  <p class="interieur-punch reveal">Le PV retient qui a parlé. Nous, nous retiendrons <mark>ce qui a été obtenu.</mark></p>
+</section>
+
+<!-- METHODE -->
+<section class="methode" id="methode">
+  <span class="section-label">Notre méthode</span>
+  <h2 class="reveal">Nous ne sommes pas là <em>pour siéger.</em></h2>
+  <p class="methode-intro reveal">Une campagne se juge à sa préparation. La nôtre a commencé il y a des mois : procès-verbaux épluchés, accords analysés ligne par ligne, revendications solides et défendables. Le sérieux est notre première promesse.</p>
+  <div class="methode-grid">
+    <div class="methode-card reveal">
+      <span class="lab">Préparation</span>
+      <h3>Un travail de dossier</h3>
+      <p>Tout ce que nous avançons vient de documents officiels vérifiables : PV de CSE, accords d'entreprise, bilans, rapports d'expertise. Pas de slogans creux, des faits.</p>
+    </div>
+    <div class="methode-card reveal">
+      <span class="lab">Discipline</span>
+      <h3>Une ligne, tenue</h3>
+      <p>Jamais signer un recul. Un contre-pouvoir qui signe tout ne négocie plus rien. Cette règle ne connaîtra aucune exception pendant quatre ans.</p>
+    </div>
+    <div class="methode-card reveal">
+      <span class="lab">Transparence</span>
+      <h3>Des comptes rendus</h3>
+      <p>Après chaque CSE : ce qui a été demandé, obtenu, refusé, et par qui. Compte rendu nominatif de chaque vote, noir sur blanc, sous 7 jours.</p>
+    </div>
+  </div>
 </section>
 
 <!-- REJOINDRE -->
 <section class="rejoindre" id="rejoindre">
   <span class="section-label" style="justify-content:center;">La suite s'écrit maintenant</span>
-  <h2 class="reveal">Rejoignez <em>la Relève.</em></h2>
-  <p class="reveal">Candidate ou candidat, soutien discret ou simple curieux : chaque salarié compte. La liste se construit en ce moment, sur tous les sites, dans tous les métiers. Écrivez-nous, on vous répond vite et en toute confidentialité.</p>
-  <a class="btn-magnetic reveal" href="mailto:contact@lareleve2026.fr">Nous rejoindre <span class="arrow">→</span></a>
-  <div class="rejoindre-mono reveal">lareleve2026.fr · réponse sous 48h · confidentialité garantie</div>
+  <h2 class="reveal">La vague, <em>c'est vous.</em></h2>
+  <p class="reveal">Octobre 2026 : une seule fenêtre avant 2030. Candidate ou candidat, relais sur votre site, ou simple soutien · chaque main compte. La liste se construit en ce moment, sur tous les sites, dans tous les métiers.</p>
+  <a class="btn-magnetic reveal" href="mailto:contact@lareleve2026.fr">Rejoindre La Relève <span class="arrow">→</span></a>
+  <div class="rejoindre-mono reveal">contact@lareleve2026.fr · réponse sous 48h · anonymat garanti</div>
 </section>
 
 <footer>
-  <div class="f-logo">La Relève<b>.</b></div>
-  <p>Place aux actes. · Élections CSE UES Indigo · Octobre 2026</p>
+  <div class="f-top">
+    <div class="f-brand">
+      <div class="f-logo">La Relève<b>.</b></div>
+      <p>Liste indépendante des salarié·es de l'UES Indigo pour les élections CSE d'octobre 2026.</p>
+    </div>
+    <div class="f-col">
+      <h4>Naviguer</h4>
+      <a href="#equipe">Qui nous sommes</a>
+      <a href="#resultats">Résultats 2022</a>
+      <a href="#mur">Le mur des signatures</a>
+      <a href="#engagements">Le programme</a>
+    </div>
+    <div class="f-col">
+      <h4>Agir</h4>
+      <a href="#rejoindre">Rejoindre</a>
+      <a href="mailto:contact@lareleve2026.fr">Devenir candidat·e</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="mailto:contact@lareleve2026.fr">contact@lareleve2026.fr</a>
+      <span>48 avenue du Général de Gaulle<br>92800 Puteaux</span>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <p>© 2026 La Relève · Place aux actes.</p>
+    <p>Tous les chiffres cités proviennent de documents officiels vérifiables.</p>
+  </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1027,30 +1170,6 @@ if (window.gsap && !reduced){
       gsap.from(p, {y: 60, opacity: 0, duration: .8, ease: 'power3.out',
         scrollTrigger: {trigger: p, start: 'top 92%'}});
     });
-  });
-
-  /* manifeste : mots qui s'allument au scroll */
-  const mt = document.getElementById('manifesteText');
-  const nodes = [...mt.childNodes];
-  mt.textContent = '';
-  nodes.forEach(node => {
-    if (node.nodeType === 3){
-      node.textContent.split(/(\s+)/).forEach(part => {
-        if (/^\s+$/.test(part)){ mt.appendChild(document.createTextNode(' ')); }
-        else if (part){ const s=document.createElement('span'); s.className='w'; s.textContent=part; mt.appendChild(s); }
-      });
-    } else if (node.nodeType === 1){
-      const em = document.createElement('em');
-      node.textContent.split(/(\s+)/).forEach(part => {
-        if (/^\s+$/.test(part)){ em.appendChild(document.createTextNode(' ')); }
-        else if (part){ const s=document.createElement('span'); s.className='w'; s.textContent=part; em.appendChild(s); }
-      });
-      mt.appendChild(em);
-    }
-  });
-  gsap.to('#manifesteText .w', {
-    opacity:1, stagger:.02, ease:'none',
-    scrollTrigger:{trigger:'.manifeste', start:'top 70%', end:'top 15%', scrub:true}
   });
 
   /* bouton magnétique */
