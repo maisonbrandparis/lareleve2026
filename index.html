@@ -576,15 +576,13 @@ footer{
 /* ---------- SIGNATURE SUD ---------- */
 .sud{
   height:1.5em;width:auto;display:inline-block;vertical-align:-.42em;margin-left:.32em;
-  filter:drop-shadow(0 0 12px rgba(139,61,255,.7));
 }
 .f-logo .sud{height:1.35em;vertical-align:-.36em;}
 .hero-sud{
-  display:block;width:min(52vw,620px);height:auto;
-  margin:-.06em 0 0 -.01em;
-  filter:drop-shadow(0 0 34px rgba(139,61,255,.75)) drop-shadow(0 0 80px rgba(139,61,255,.4));
+  display:block;width:min(24vw,260px);height:auto;
+  margin:.15em 0 0 .06em;
 }
-@media (max-width:768px){ .hero-sud{width:min(74vw,420px);} }
+@media (max-width:768px){ .hero-sud{width:min(40vw,200px);} }
 
 /* ---------- AMBIANCE NUIT NEON ---------- */
 body{
@@ -1070,7 +1068,7 @@ function heroIntro(){
   gsap.to('.hero-title .line > span', {y:0, duration:1.1, ease:'power4.out', stagger:.12});
   gsap.to('.hero .reveal', {opacity:1, y:0, duration:1, ease:'power3.out', stagger:.12, delay:.5});
   gsap.fromTo('.hero-sud', {opacity:0, scale:.86, rotate:-4, x:-30},
-    {opacity:1, scale:1, rotate:0, x:0, duration:1.1, ease:'back.out(1.5)', delay:.62});
+    {opacity:1, scale:1, rotate:0, x:0, duration:.9, ease:'power3.out', delay:.62});
 }
 (function(){
   const loader = document.getElementById('loader');
