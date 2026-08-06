@@ -266,11 +266,21 @@ nav.scrolled .nav-cta{background:var(--coral);color:#fff !important;}
 .constat .section-label{color:var(--lime);position:absolute;top:clamp(4.5rem,10vh,6rem);left:clamp(1.2rem,4vw,3rem);}
 .unanime-stack{display:flex;flex-direction:column;gap:.2rem;}
 .unanime-line{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.7rem;
   font-family:'Instrument Serif',serif;font-style:italic;
-  font-size:clamp(1.35rem,4.4vw,3.4rem);line-height:1.2;color:rgba(237,231,248,.85);
-  white-space:nowrap;
+  font-size:clamp(1.05rem,2.9vw,2.15rem);line-height:1.25;color:rgba(237,231,248,.9);
+  padding:.18rem 0;
 }
-@media (max-width:480px){ .unanime-line{white-space:normal;} }
+.unanime-line .fait{white-space:normal;}
+.unanime-line .signe{
+  font-family:'Archivo',sans-serif;font-style:normal;font-weight:900;
+  text-transform:uppercase;letter-spacing:.04em;
+  font-size:.62em;color:var(--lime);
+  border:1.5px solid rgba(139,61,255,.65);background:rgba(139,61,255,.12);
+  border-radius:5px;padding:.1em .45em;transform:rotate(-2deg);
+}
+.unanime-line:nth-child(even) .signe{transform:rotate(2deg);}
+@media (max-width:600px){ .unanime-line{font-size:1rem;gap:.5rem;} }
 .non-stamp{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;
 }
@@ -695,15 +705,16 @@ body{
 <!-- CONSTAT -->
 <section class="constat" id="constat">
   <div class="constat-pin" id="constatPin">
-    <span class="section-label">Le constat</span>
+    <span class="section-label">Ce qu'ils ont validé pour vous</span>
     <div class="unanime-stack" id="unanimeStack">
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
-      <div class="unanime-line">« Approuvé à l'unanimité. »</div>
+      <div class="unanime-line"><span class="fait">Votre augmentation, revue à la baisse.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">Le plancher qui protégeait les bas salaires, supprimé.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">Zéro euro pour votre électricité en télétravail.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">Vos Noëls divisés par deux.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">40 salariés à moins 30% de salaire après la cyberattaque.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">Vos appels écoutés sans qu'on vous prévienne.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">Les agents de nuit, oubliés depuis 20 ans.</span><span class="signe">Signé.</span></div>
+      <div class="unanime-line"><span class="fait">Zéro femme parmi les 11 délégués syndicaux.</span><span class="signe">Signé.</span></div>
     </div>
     <div class="non-stamp"><b id="nonStamp">Non.</b></div>
   </div>
@@ -1150,6 +1161,7 @@ if (window.gsap && !reduced){
     }
   });
   tl.from(lines, {opacity:0, y:30, stagger:.12, duration:.8})
+    .from('.unanime-line .signe', {scale:1.9, opacity:0, rotation:() => gsap.utils.random(-18,18), duration:.3, ease:'back.out(2.4)', stagger:.12}, '<.15')
     .to(lines, {opacity:.1, filter:'blur(2px)', stagger:.05, duration:.6}, '+=.2')
     .to('#nonStamp', {scale:1, rotate:-6, duration:.9, ease:'back.out(1.6)'}, '<+.2')
     .to('#nonStamp', {rotate:-4, duration:.4});
