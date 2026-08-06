@@ -7,6 +7,7 @@
 <meta name="description" content="La Relève, la liste des salariés de l'UES Indigo qui veulent un vrai contre-pouvoir au CSE. Élections d'octobre 2026. Place aux actes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="sud.png">
 <link rel="preload" as="image" href="hero-desktop.jpg" media="(min-width:769px)">
 <link rel="preload" as="image" href="hero-mobile.jpg" media="(max-width:768px)">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Kaushan+Script&display=swap" rel="stylesheet">
@@ -574,17 +575,16 @@ footer{
 
 /* ---------- SIGNATURE SUD ---------- */
 .sud{
-  font-family:'Kaushan Script',cursive;font-style:normal;
-  color:var(--coral);text-transform:none;letter-spacing:0;
-  font-size:1.15em;margin-left:.18em;
-  text-shadow:0 0 18px rgba(139,61,255,.65);
+  height:1.5em;width:auto;display:inline-block;vertical-align:-.42em;margin-left:.32em;
+  filter:drop-shadow(0 0 12px rgba(139,61,255,.7));
 }
+.f-logo .sud{height:1.35em;vertical-align:-.36em;}
 .hero-sud{
-  font-family:'Kaushan Script',cursive;color:var(--coral);
-  font-size:clamp(3rem,11vw,8.5rem);line-height:.8;
-  margin:-.12em 0 0 .04em;
-  text-shadow:0 0 40px rgba(139,61,255,.75), 0 0 90px rgba(139,61,255,.4);
+  display:block;width:min(52vw,620px);height:auto;
+  margin:-.06em 0 0 -.01em;
+  filter:drop-shadow(0 0 34px rgba(139,61,255,.75)) drop-shadow(0 0 80px rgba(139,61,255,.4));
 }
+@media (max-width:768px){ .hero-sud{width:min(74vw,420px);} }
 
 /* ---------- AMBIANCE NUIT NEON ---------- */
 body{
@@ -651,7 +651,7 @@ body{
 
 <!-- NAV -->
 <nav id="nav">
-  <a class="nav-logo" href="#top">La Relève<b>.</b><i class="sud">Sud</i></a>
+  <a class="nav-logo" href="#top">La Relève<b>.</b><img class="sud" src="sud.png" alt="Sud"></a>
   <div class="nav-links">
     <a href="#equipe">Qui nous sommes</a>
     <a href="#resultats">Résultats 2022</a>
@@ -668,7 +668,7 @@ body{
     <span class="line"><span>La</span></span>
     <span class="line"><span>Relève<em>.</em></span></span>
   </h1>
-  <div class="hero-sud" aria-hidden="true">Sud</div>
+  <img class="hero-sud" src="sud.png" alt="Sud" width="721" height="354">
   <div class="hero-sub">
     <div class="hero-slogan reveal">Un syndicat utile, <mark>ne signe pas tout</mark>.</div>
     <p class="hero-desc reveal">Cinq syndicats représentatifs. Cinq signataires unanimes. Zéro contre-pouvoir. La Relève est la liste indépendante des salarié·es de l'UES Indigo. Elle propose, elle refuse, elle rend des comptes.</p>
@@ -1013,7 +1013,7 @@ body{
 <footer>
   <div class="f-top">
     <div class="f-brand">
-      <div class="f-logo">La Relève<b>.</b> <i class="sud">Sud</i></div>
+      <div class="f-logo">La Relève<b>.</b> <img class="sud" src="sud.png" alt="Sud"></div>
       <p>Liste indépendante des salarié·es de l'UES Indigo pour les élections CSE d'octobre 2026.</p>
     </div>
     <div class="f-col">
@@ -1069,6 +1069,8 @@ function heroIntro(){
   if (reduced) return;
   gsap.to('.hero-title .line > span', {y:0, duration:1.1, ease:'power4.out', stagger:.12});
   gsap.to('.hero .reveal', {opacity:1, y:0, duration:1, ease:'power3.out', stagger:.12, delay:.5});
+  gsap.fromTo('.hero-sud', {opacity:0, scale:.86, rotate:-4, x:-30},
+    {opacity:1, scale:1, rotate:0, x:0, duration:1.1, ease:'back.out(1.5)', delay:.62});
 }
 (function(){
   const loader = document.getElementById('loader');
