@@ -399,6 +399,24 @@ nav.scrolled .nav-cta{background:var(--coral);color:#fff !important;}
 .sal-questions li{font-size:.96rem;line-height:1.6;color:rgba(237,231,248,.82);padding-left:1.6rem;position:relative;max-width:70ch;}
 .sal-questions li::before{content:'?';position:absolute;left:0;top:0;font-family:'Archivo',sans-serif;font-weight:900;color:var(--coral);}
 
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;margin-bottom:2.8rem;}
+.step{background:var(--panel2);border:1px solid rgba(139,61,255,.3);border-radius:18px;padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;position:relative;}
+.step .n{
+  font-weight:900;font-size:2.6rem;line-height:1;color:var(--coral);opacity:.55;
+}
+.step h3{font-weight:900;text-transform:uppercase;font-size:clamp(1rem,1.8vw,1.22rem);line-height:1.2;letter-spacing:-.01em;}
+.step p{font-size:.92rem;line-height:1.62;color:rgba(237,231,248,.78);}
+.zero-block{
+  display:flex;flex-wrap:wrap;align-items:center;gap:clamp(1.4rem,4vw,3rem);
+  border:1px solid rgba(139,61,255,.45);background:rgba(139,61,255,.07);
+  border-radius:20px;padding:clamp(1.6rem,3.5vw,2.8rem);margin-bottom:2.8rem;
+}
+.zero-num{font-weight:900;font-size:clamp(5rem,15vw,11rem);line-height:.85;letter-spacing:-.04em;color:var(--lime);}
+.zero-txt{flex:1;min-width:260px;}
+.zero-txt h3{font-weight:900;text-transform:uppercase;font-size:clamp(1.1rem,2.2vw,1.6rem);margin-bottom:.9rem;letter-spacing:-.01em;}
+.zero-txt p{font-size:.96rem;line-height:1.65;color:rgba(237,231,248,.82);margin-bottom:.8rem;max-width:60ch;}
+.zero-txt p b{color:var(--lime);}
+
 /* ---------- MUR DES SIGNATURES ---------- */
 .mur{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
 .mur h2{
@@ -864,24 +882,51 @@ body{
 <!-- SALAIRES -->
 <section class="salaires" id="salaires">
   <span class="section-label">L'augmentation générale</span>
-  <h2 class="reveal">1,2% en 2026. Et encore, <em>ce n'est pas eux.</em></h2>
-  <p class="sal-intro reveal">L'augmentation générale annoncée chaque année n'est pas ce que vous croyez. Une clause, reconduite quatre années de suite et signée par les cinq organisations, prévoit que le budget d'augmentation générale absorbe les hausses imposées par la convention collective. Autrement dit, pour les salaires positionnés au minimum de la branche, l'entreprise ne fait qu'appliquer ce qu'elle doit déjà appliquer.</p>
+  <h2 class="reveal">On vous annonce une augmentation. <em>Vous ne l'avez jamais eue.</em></h2>
+  <p class="sal-intro reveal">Chaque année, une augmentation générale est annoncée. Chaque année, cinq syndicats signent. Et chaque année, sur votre bulletin, il ne s'ajoute rien de plus que ce que la loi de la branche imposait déjà. Voici comment ça marche, en trois étapes.</p>
+
+  <div class="steps">
+    <div class="step reveal">
+      <span class="n">1</span>
+      <h3>La branche augmente les minimums</h3>
+      <p>La convention collective couvre tous les employeurs du secteur. Quand elle relève ses salaires minimums, tous doivent suivre. C'est obligatoire. Personne chez Indigo n'a eu à le négocier.</p>
+    </div>
+    <div class="step reveal">
+      <span class="n">2</span>
+      <h3>L'entreprise annonce son augmentation</h3>
+      <p>Indigo annonce une augmentation générale, avec un pourcentage. Sauf que l'accord contient une phrase que peu de gens ont lue : ce budget d'augmentation inclut les hausses imposées par la branche.</p>
+    </div>
+    <div class="step reveal">
+      <span class="n">3</span>
+      <h3>La hausse de la branche remplit l'augmentation</h3>
+      <p>Pour un salarié payé au minimum de son échelon, la hausse obligatoire vient occuper la place de l'augmentation annoncée. Il ne s'ajoute rien. L'entreprise appelle augmentation ce que la branche lui impose.</p>
+    </div>
+  </div>
 
   <div class="clause reveal">
-    <span class="lab">Texte de l'accord, mot pour mot</span>
+    <span class="lab">La phrase, mot pour mot, dans l'accord</span>
     <q>le budget d'augmentation générale inclut les augmentations conventionnelles</q>
-    <p class="src">NAO 2023 art. 2.1.1 · NAO 2024 art. 2.1 · NAO 2025 art. 2.1 · NAO 2026 art. 2-1<br>Cinq signatures à chaque fois. Quatre années de suite.</p>
-    <p class="exp">La direction l'a elle-même écrit noir sur blanc dans sa note d'affichage du 17 janvier 2022 : elle y présente la revalorisation des minima de branche comme l'attribution des augmentations générales. <b>La branche augmente, l'entreprise l'appelle son augmentation.</b> Et le préambule de la NAO 2026 rappelle qu'une nouvelle revalorisation de branche était attendue au premier semestre 2026. Ils le savaient en signant.</p>
+    <p class="src">NAO 2023 art. 2.1.1 · NAO 2024 art. 2.1 · NAO 2025 art. 2.1 · NAO 2026 art. 2-1<br>Quatre années de suite. Cinq signatures à chaque fois.</p>
+    <p class="exp">Ce n'est pas une interprétation. La direction l'a écrit elle-même dans sa note d'affichage du 17 janvier 2022, où elle présente la revalorisation des minimums de branche comme l'attribution des augmentations générales. Et le préambule de la NAO 2026 rappelle qu'une revalorisation de branche est intervenue en octobre 2025 et qu'une autre était attendue au premier semestre 2026. <b>Ils le savaient en signant.</b></p>
+  </div>
+
+  <div class="zero-block reveal">
+    <div class="zero-num">0 €</div>
+    <div class="zero-txt">
+      <h3>Négocié au-dessus de la branche</h3>
+      <p>Regardez vos grilles de salaire Indigo. En tête de colonne, une mention : <b>Mini CCNSA</b>. C'est le minimum de la convention collective nationale. Il n'existe aucun minimum d'entreprise au-dessus, sur aucun échelon, ni chez les employés ni chez les agents de maîtrise.</p>
+      <p>Voilà le résultat de quatre ans de négociations annuelles signées à l'unanimité. Pas un euro arraché au-dessus de ce que le secteur impose à tout le monde.</p>
+    </div>
   </div>
 
   <div class="ag-chart reveal">
-    <h3>Augmentation générale employés, cinq ans de trajectoire</h3>
+    <h3>Ce qui vous est annoncé chaque année, employés</h3>
     <div class="ag-row"><span class="yr">2022</span><div class="ag-track"><div class="ag-fill" data-w="79"></div></div><span class="ag-val">2,37%</span></div>
     <div class="ag-row"><span class="yr">2023</span><div class="ag-track"><div class="ag-fill" data-w="100"></div></div><span class="ag-val">3,00%</span></div>
     <div class="ag-row"><span class="yr">2024</span><div class="ag-track"><div class="ag-fill" data-w="83"></div></div><span class="ag-val">2,50%</span></div>
     <div class="ag-row"><span class="yr">2025</span><div class="ag-track"><div class="ag-fill" data-w="67"></div></div><span class="ag-val">2,00%</span></div>
     <div class="ag-row last"><span class="yr">2026</span><div class="ag-track"><div class="ag-fill" data-w="40"></div></div><span class="ag-val">1,20%</span></div>
-    <p class="ag-note">Divisée par deux en cinq ans. En 2026, le budget total employés est de 1,8% : 1,2% d'augmentation générale et 0,6% d'enveloppe individuelle.</p>
+    <p class="ag-note">Le pourcentage annoncé est divisé par deux en cinq ans. En 2022, la direction écrit elle-même que ces 2,37% sont la revalorisation des minimums de branche. En 2026, le budget total employés est de 1,8% : 1,2% d'augmentation générale et 0,6% d'enveloppe individuelle.</p>
   </div>
 
   <div class="sal-grid">
@@ -891,11 +936,6 @@ body{
       <p>42 € en 2022, 36 € en 2025 soit 6 € de moins quatre ans plus tard, supprimé en 2026. Sans plancher, un échelon 3 touche environ 22 € bruts.</p>
     </div>
     <div class="sal-card reveal">
-      <span class="lab">Les grilles</span>
-      <b>Mini CCNSA</b>
-      <p>C'est la mention portée en tête des colonnes des grilles Indigo. Aucun minimum d'entreprise négocié au-dessus de la branche, sur aucun échelon, ni employés ni maîtrise.</p>
-    </div>
-    <div class="sal-card reveal">
       <span class="lab">Prime de tenue</span>
       <b>40 € depuis 2022</b>
       <p>Fixée par la NAO 2022, identique sur les bulletins de 2024 et de 2026. Quatre ans sans un centime de revalorisation.</p>
@@ -903,17 +943,22 @@ body{
     <div class="sal-card reveal">
       <span class="lab">Panier repas</span>
       <b>6,12 € / 7,50 €</b>
-      <p>Le plafond exonéré de charges est à 7,50 €. L'écart ne coûterait rien en cotisations à l'employeur. Il n'a jamais été comblé.</p>
+      <p>Le plafond exonéré de charges est à 7,50 €. Combler l'écart ne coûterait aucune cotisation à l'employeur. Il n'a jamais été comblé.</p>
     </div>
     <div class="sal-card reveal">
       <span class="lab">Les échelons</span>
       <b>14 ans de gel</b>
-      <p>L'accord de 2024 reconnaît que seuls les échelons de référence étaient utilisés depuis 2010. Le passage à l'échelon intermédiaire est rétabli, mais l'accord précise qu'il n'est pas automatique.</p>
+      <p>L'accord de 2024 reconnaît que seuls les échelons de référence étaient utilisés depuis 2010. Le passage à l'échelon intermédiaire est rétabli, mais l'accord précise qu'il ne sera pas automatique.</p>
     </div>
     <div class="sal-card reveal">
       <span class="lab">Les bloqués</span>
       <b>Plus de 5 ans</b>
       <p>L'accord s'engage à étudier la situation des salariés sans évolution d'échelon depuis plus de cinq ans. Ils reconnaissent donc par écrit qu'une population entière est bloquée.</p>
+    </div>
+    <div class="sal-card reveal">
+      <span class="lab">Ce que ça donne</span>
+      <b>Rien de plus</b>
+      <p>Une augmentation qui absorbe la branche, un plancher supprimé, des primes figées, des échelons gelés quatorze ans. Le tout signé par cinq organisations, sans une voix contre.</p>
     </div>
   </div>
 
@@ -921,8 +966,8 @@ body{
     <h3>Les questions que personne n'a posées</h3>
     <ul>
       <li>L'enveloppe individuelle de 0,6% budgétée pour les employés en 2026 existe et elle est provisionnée. À qui est-elle attribuée, et selon quels critères ?</li>
-      <li>L'article 8 de la NAO 2026 crée une commission de suivi qui doit restituer les critères d'attribution des mesures individuelles, la répartition par catégorie et par genre, les changements d'échelon et un point sur les salariés bloqués depuis plus de cinq ans, au plus tard le 30 avril 2026. Ces données ont-elles été demandées ? Publiées ?</li>
-      <li>Si l'augmentation générale absorbe la revalorisation de branche, que reste-t-il de négocié pour les salariés positionnés au minimum de leur échelon ?</li>
+      <li>L'article 8 de la NAO 2026 crée une commission de suivi. Elle doit restituer les critères d'attribution des mesures individuelles, la répartition par catégorie et par genre, les changements d'échelon et un point sur les salariés bloqués depuis plus de cinq ans, au plus tard le 30 avril 2026. Ces données ont-elles été demandées ? Publiées ?</li>
+      <li>Si l'augmentation générale absorbe la revalorisation de branche, que reste-t-il réellement de négocié pour les salariés payés au minimum de leur échelon ?</li>
     </ul>
   </div>
 </section>
