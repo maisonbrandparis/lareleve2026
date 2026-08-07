@@ -417,6 +417,28 @@ nav.scrolled .nav-cta{background:var(--coral);color:#fff !important;}
 .zero-txt p{font-size:.96rem;line-height:1.65;color:rgba(237,231,248,.82);margin-bottom:.8rem;max-width:60ch;}
 .zero-txt p b{color:var(--lime);}
 
+.compar{
+  border:1px solid rgba(139,61,255,.45);background:rgba(139,61,255,.07);
+  border-radius:20px;padding:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:2.8rem;
+}
+.compar h3{font-weight:900;text-transform:uppercase;font-size:clamp(1.15rem,2.4vw,1.8rem);letter-spacing:-.01em;margin-bottom:.6rem;}
+.compar > p.sub{font-size:.94rem;line-height:1.6;color:rgba(237,231,248,.75);margin-bottom:1.8rem;max-width:62ch;}
+.compar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-bottom:1.6rem;}
+.cbox{background:rgba(11,7,20,.5);border:1px solid rgba(139,61,255,.28);border-radius:16px;padding:1.4rem 1.2rem;display:flex;flex-direction:column;gap:.5rem;}
+.cbox .who{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,231,248,.6);}
+.cbox .val{font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:1;letter-spacing:-.03em;color:var(--text);}
+.cbox.branche .val{color:var(--lime);}
+.cbox.zero{border-color:var(--coral);background:rgba(139,61,255,.16);}
+.cbox.zero .val{color:var(--coral);font-size:clamp(2.6rem,7vw,4.4rem);}
+.cbox .det{font-size:.82rem;line-height:1.5;color:rgba(237,231,248,.7);}
+.compar .concret{
+  border-top:1px solid rgba(139,61,255,.3);padding-top:1.5rem;
+  font-size:clamp(.96rem,1.6vw,1.1rem);line-height:1.7;color:rgba(237,231,248,.9);max-width:66ch;
+}
+.compar .concret b{color:var(--lime);}
+.compar .src{margin-top:1.2rem;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.05em;color:rgba(237,231,248,.55);line-height:1.8;}
+.compar .src a{color:rgba(237,231,248,.7);}
+
 /* ---------- MUR DES SIGNATURES ---------- */
 .mur{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
 .mur h2{
@@ -882,7 +904,7 @@ body{
 <!-- SALAIRES -->
 <section class="salaires" id="salaires">
   <span class="section-label">L'augmentation générale</span>
-  <h2 class="reveal">On vous annonce une augmentation. <em>Vous ne l'avez jamais eue.</em></h2>
+  <h2 class="reveal">L'augmentation, ce n'est pas eux. <em>C'est la convention collective.</em></h2>
   <p class="sal-intro reveal">Chaque année, une augmentation générale est annoncée. Chaque année, cinq syndicats signent. Et chaque année, sur votre bulletin, il ne s'ajoute rien de plus que ce que la loi de la branche imposait déjà. Voici comment ça marche, en trois étapes.</p>
 
   <div class="steps">
@@ -901,6 +923,31 @@ body{
       <h3>La hausse de la branche remplit l'augmentation</h3>
       <p>Pour un salarié payé au minimum de son échelon, la hausse obligatoire vient occuper la place de l'augmentation annoncée. Il ne s'ajoute rien. L'entreprise appelle augmentation ce que la branche lui impose.</p>
     </div>
+  </div>
+
+  <div class="compar reveal">
+    <h3>2026, le calcul en clair</h3>
+    <p class="sub">Voici, pour la dernière année, ce que vous devez à la convention collective de la branche, et ce que votre employeur a ajouté par-dessus.</p>
+    <div class="compar-grid">
+      <div class="cbox branche">
+        <span class="who">La convention collective</span>
+        <span class="val">+1,25%</span>
+        <span class="det">Revalorisation moyenne des minimums de branche. Obligatoire pour tous les employeurs du secteur.</span>
+      </div>
+      <div class="cbox">
+        <span class="who">Indigo annonce</span>
+        <span class="val">+1,20%</span>
+        <span class="det">Augmentation générale employés inscrite dans la NAO 2026, signée par les cinq organisations.</span>
+      </div>
+      <div class="cbox zero">
+        <span class="who">Ajouté par l'employeur</span>
+        <span class="val">0</span>
+        <span class="det">L'augmentation annoncée est inférieure à ce que la branche impose déjà.</span>
+      </div>
+    </div>
+    <p class="concret">Autrement dit, pour un salarié payé au minimum de son échelon : la convention collective lui garantit 1,25%. Indigo annonce 1,20%. <b>L'entreprise n'ajoute rien, elle annonce même moins que ce qu'elle est obligée de verser.</b> Et le préambule de la NAO 2026 mentionne noir sur blanc qu'une nouvelle revalorisation de branche était attendue au premier semestre 2026. Ils le savaient en signant.</p>
+    <p class="concret" style="border-top:none;padding-top:1rem;">Même mécanisme sur le panier repas. La convention fixe l'indemnité à 6,09 €. Indigo verse 6,12 €. <b>Trois centimes au-dessus du minimum obligatoire</b>, alors que le plafond exonéré de cotisations est à 7,50 € et que combler l'écart ne coûterait aucune charge à l'employeur.</p>
+    <p class="src">Sources vérifiables · Avenant n°110 du 22 janvier 2026 aux salaires minima de la convention collective des services de l'automobile (IDCC 1090), étendu par arrêté du 2 avril 2026, publié au Journal officiel du 16 avril 2026, applicable au 1er mai 2026 · Revalorisation moyenne de 1,25% sur l'ensemble de la grille · Indemnité de panier fixée à 6,09 € par l'article 3 du même avenant · NAO Indigo 2026, article 2-1 et préambule.</p>
   </div>
 
   <div class="clause reveal">
@@ -939,11 +986,6 @@ body{
       <span class="lab">Prime de tenue</span>
       <b>40 € depuis 2022</b>
       <p>Fixée par la NAO 2022, identique sur les bulletins de 2024 et de 2026. Quatre ans sans un centime de revalorisation.</p>
-    </div>
-    <div class="sal-card reveal">
-      <span class="lab">Panier repas</span>
-      <b>6,12 € / 7,50 €</b>
-      <p>Le plafond exonéré de charges est à 7,50 €. Combler l'écart ne coûterait aucune cotisation à l'employeur. Il n'a jamais été comblé.</p>
     </div>
     <div class="sal-card reveal">
       <span class="lab">Les échelons</span>
