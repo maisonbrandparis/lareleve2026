@@ -358,6 +358,47 @@ nav.scrolled .nav-cta{background:var(--coral);color:#fff !important;}
 .res-footer{margin-top:2.6rem;font-size:clamp(.95rem,1.5vw,1.05rem);line-height:1.7;color:rgba(237,231,248,.85);max-width:72ch;}
 .res-footer b{color:#B78CFF;}
 
+/* ---------- SALAIRES ---------- */
+.salaires{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
+.salaires h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-size:clamp(2.2rem,6vw,4.8rem);margin-bottom:1.1rem;}
+.salaires h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--coral);}
+.sal-intro{max-width:64ch;line-height:1.7;color:rgba(237,231,248,.8);margin-bottom:2.8rem;font-size:clamp(.95rem,1.5vw,1.08rem);}
+.clause{
+  border:1px solid rgba(139,61,255,.45);background:rgba(139,61,255,.07);
+  border-radius:20px;padding:clamp(1.5rem,3.5vw,2.6rem);margin-bottom:2.8rem;
+}
+.clause .lab{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:1rem;}
+.clause q{
+  display:block;font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:clamp(1.2rem,3.2vw,2.1rem);line-height:1.35;color:var(--text);quotes:'«  ' '  »';
+}
+.clause .src{margin-top:1.1rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.06em;color:rgba(237,231,248,.6);line-height:1.7;}
+.clause .exp{margin-top:1.3rem;font-size:.98rem;line-height:1.65;color:rgba(237,231,248,.85);max-width:62ch;}
+.clause .exp b{color:var(--lime);}
+
+.ag-chart{margin-bottom:2.8rem;}
+.ag-chart h3{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:1.4rem;font-weight:400;}
+.ag-row{display:grid;grid-template-columns:56px 1fr auto;gap:1rem;align-items:center;padding:.35rem 0;}
+.ag-row .yr{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:rgba(237,231,248,.7);}
+.ag-track{height:16px;background:rgba(237,231,248,.08);border-radius:99px;overflow:hidden;}
+.ag-fill{height:100%;width:0;background:linear-gradient(90deg,#8B3DFF,#C79BFF);border-radius:99px;box-shadow:0 0 14px rgba(139,61,255,.5);}
+.ag-row.last .ag-fill{background:linear-gradient(90deg,#5B1FB0,#8B3DFF);}
+.ag-val{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--text);min-width:52px;text-align:right;}
+.ag-note{margin-top:1rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:rgba(237,231,248,.55);line-height:1.7;}
+
+.sal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-bottom:2.8rem;}
+.sal-card{background:var(--panel2);border:1px solid rgba(139,61,255,.32);border-radius:18px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;}
+.sal-card:hover{transform:translateY(-8px);box-shadow:0 0 0 1px rgba(139,61,255,.6), 0 18px 50px rgba(139,61,255,.25);}
+.sal-card .lab{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);}
+.sal-card b{font-weight:900;font-size:clamp(1.5rem,2.8vw,2.2rem);letter-spacing:-.02em;line-height:1.05;color:var(--text);}
+.sal-card b s{text-decoration:line-through;opacity:.4;font-weight:400;}
+.sal-card p{font-size:.88rem;line-height:1.6;color:rgba(237,231,248,.75);}
+.sal-questions{border-top:1px solid rgba(139,61,255,.3);padding-top:2rem;}
+.sal-questions h3{font-weight:900;text-transform:uppercase;font-size:clamp(1.2rem,2.4vw,1.7rem);margin-bottom:1.3rem;letter-spacing:-.01em;}
+.sal-questions ul{list-style:none;display:flex;flex-direction:column;gap:1rem;}
+.sal-questions li{font-size:.96rem;line-height:1.6;color:rgba(237,231,248,.82);padding-left:1.6rem;position:relative;max-width:70ch;}
+.sal-questions li::before{content:'?';position:absolute;left:0;top:0;font-family:'Archivo',sans-serif;font-weight:900;color:var(--coral);}
+
 /* ---------- MUR DES SIGNATURES ---------- */
 .mur{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
 .mur h2{
@@ -673,6 +714,7 @@ body{
   <div class="nav-links">
     <a href="#equipe">Qui nous sommes</a>
     <a href="#resultats">Résultats 2022</a>
+    <a href="#salaires">Salaires</a>
     <a href="#mur">Le mur</a>
     <a href="#engagements">Programme</a>
     <a class="nav-cta" href="#rejoindre">Rejoindre</a>
@@ -817,6 +859,72 @@ body{
     <div class="bar-scale">Longueur des barres = part des 202 inscrits du collège</div>
   </div>
 
+</section>
+
+<!-- SALAIRES -->
+<section class="salaires" id="salaires">
+  <span class="section-label">L'augmentation générale</span>
+  <h2 class="reveal">1,2% en 2026. Et encore, <em>ce n'est pas eux.</em></h2>
+  <p class="sal-intro reveal">L'augmentation générale annoncée chaque année n'est pas ce que vous croyez. Une clause, reconduite quatre années de suite et signée par les cinq organisations, prévoit que le budget d'augmentation générale absorbe les hausses imposées par la convention collective. Autrement dit, pour les salaires positionnés au minimum de la branche, l'entreprise ne fait qu'appliquer ce qu'elle doit déjà appliquer.</p>
+
+  <div class="clause reveal">
+    <span class="lab">Texte de l'accord, mot pour mot</span>
+    <q>le budget d'augmentation générale inclut les augmentations conventionnelles</q>
+    <p class="src">NAO 2023 art. 2.1.1 · NAO 2024 art. 2.1 · NAO 2025 art. 2.1 · NAO 2026 art. 2-1<br>Cinq signatures à chaque fois. Quatre années de suite.</p>
+    <p class="exp">La direction l'a elle-même écrit noir sur blanc dans sa note d'affichage du 17 janvier 2022 : elle y présente la revalorisation des minima de branche comme l'attribution des augmentations générales. <b>La branche augmente, l'entreprise l'appelle son augmentation.</b> Et le préambule de la NAO 2026 rappelle qu'une nouvelle revalorisation de branche était attendue au premier semestre 2026. Ils le savaient en signant.</p>
+  </div>
+
+  <div class="ag-chart reveal">
+    <h3>Augmentation générale employés, cinq ans de trajectoire</h3>
+    <div class="ag-row"><span class="yr">2022</span><div class="ag-track"><div class="ag-fill" data-w="79"></div></div><span class="ag-val">2,37%</span></div>
+    <div class="ag-row"><span class="yr">2023</span><div class="ag-track"><div class="ag-fill" data-w="100"></div></div><span class="ag-val">3,00%</span></div>
+    <div class="ag-row"><span class="yr">2024</span><div class="ag-track"><div class="ag-fill" data-w="83"></div></div><span class="ag-val">2,50%</span></div>
+    <div class="ag-row"><span class="yr">2025</span><div class="ag-track"><div class="ag-fill" data-w="67"></div></div><span class="ag-val">2,00%</span></div>
+    <div class="ag-row last"><span class="yr">2026</span><div class="ag-track"><div class="ag-fill" data-w="40"></div></div><span class="ag-val">1,20%</span></div>
+    <p class="ag-note">Divisée par deux en cinq ans. En 2026, le budget total employés est de 1,8% : 1,2% d'augmentation générale et 0,6% d'enveloppe individuelle.</p>
+  </div>
+
+  <div class="sal-grid">
+    <div class="sal-card reveal">
+      <span class="lab">Le plancher</span>
+      <b><s>42 €</s> → <s>36 €</s> → 0 €</b>
+      <p>42 € en 2022, 36 € en 2025 soit 6 € de moins quatre ans plus tard, supprimé en 2026. Sans plancher, un échelon 3 touche environ 22 € bruts.</p>
+    </div>
+    <div class="sal-card reveal">
+      <span class="lab">Les grilles</span>
+      <b>Mini CCNSA</b>
+      <p>C'est la mention portée en tête des colonnes des grilles Indigo. Aucun minimum d'entreprise négocié au-dessus de la branche, sur aucun échelon, ni employés ni maîtrise.</p>
+    </div>
+    <div class="sal-card reveal">
+      <span class="lab">Prime de tenue</span>
+      <b>40 € depuis 2022</b>
+      <p>Fixée par la NAO 2022, identique sur les bulletins de 2024 et de 2026. Quatre ans sans un centime de revalorisation.</p>
+    </div>
+    <div class="sal-card reveal">
+      <span class="lab">Panier repas</span>
+      <b>6,12 € / 7,50 €</b>
+      <p>Le plafond exonéré de charges est à 7,50 €. L'écart ne coûterait rien en cotisations à l'employeur. Il n'a jamais été comblé.</p>
+    </div>
+    <div class="sal-card reveal">
+      <span class="lab">Les échelons</span>
+      <b>14 ans de gel</b>
+      <p>L'accord de 2024 reconnaît que seuls les échelons de référence étaient utilisés depuis 2010. Le passage à l'échelon intermédiaire est rétabli, mais l'accord précise qu'il n'est pas automatique.</p>
+    </div>
+    <div class="sal-card reveal">
+      <span class="lab">Les bloqués</span>
+      <b>Plus de 5 ans</b>
+      <p>L'accord s'engage à étudier la situation des salariés sans évolution d'échelon depuis plus de cinq ans. Ils reconnaissent donc par écrit qu'une population entière est bloquée.</p>
+    </div>
+  </div>
+
+  <div class="sal-questions reveal">
+    <h3>Les questions que personne n'a posées</h3>
+    <ul>
+      <li>L'enveloppe individuelle de 0,6% budgétée pour les employés en 2026 existe et elle est provisionnée. À qui est-elle attribuée, et selon quels critères ?</li>
+      <li>L'article 8 de la NAO 2026 crée une commission de suivi qui doit restituer les critères d'attribution des mesures individuelles, la répartition par catégorie et par genre, les changements d'échelon et un point sur les salariés bloqués depuis plus de cinq ans, au plus tard le 30 avril 2026. Ces données ont-elles été demandées ? Publiées ?</li>
+      <li>Si l'augmentation générale absorbe la revalorisation de branche, que reste-t-il de négocié pour les salariés positionnés au minimum de leur échelon ?</li>
+    </ul>
+  </div>
 </section>
 
 <!-- MUR DES SIGNATURES -->
@@ -1180,6 +1288,12 @@ if (window.gsap && !reduced){
   /* barres de résultats 2022 */
   document.querySelectorAll('.bar-fill').forEach(b => {
     gsap.to(b, {width: b.dataset.w + '%', duration: 1.3, ease: 'power3.out',
+      scrollTrigger: {trigger: b, start: 'top 92%'}});
+  });
+
+  /* trajectoire de l'augmentation générale */
+  document.querySelectorAll('.ag-fill').forEach(b => {
+    gsap.to(b, {width: b.dataset.w + '%', duration: 1.2, ease: 'power3.out',
       scrollTrigger: {trigger: b, start: 'top 92%'}});
   });
 
