@@ -439,6 +439,25 @@ nav.scrolled .nav-cta{background:var(--coral);color:#fff !important;}
 .compar .src{margin-top:1.2rem;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.05em;color:rgba(237,231,248,.55);line-height:1.8;}
 .compar .src a{color:rgba(237,231,248,.7);}
 
+.annees{margin-bottom:2.8rem;}
+.annees h3{font-weight:900;text-transform:uppercase;font-size:clamp(1.15rem,2.4vw,1.8rem);letter-spacing:-.01em;margin-bottom:.6rem;}
+.annees > p.sub{font-size:.94rem;line-height:1.6;color:rgba(237,231,248,.75);margin-bottom:1.6rem;max-width:66ch;}
+.annees-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.annees table{min-width:640px;width:100%;border-collapse:separate;border-spacing:0;}
+.annees th{
+  font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(237,231,248,.6);text-align:left;padding:.8rem .7rem;border-bottom:1px solid rgba(139,61,255,.5);font-weight:400;
+}
+.annees td{padding:.9rem .7rem;border-bottom:1px solid rgba(139,61,255,.16);font-size:.9rem;vertical-align:top;line-height:1.45;}
+.annees td.yr{font-family:'JetBrains Mono',monospace;font-size:.86rem;color:var(--text);white-space:nowrap;}
+.annees td small{display:block;font-size:.74rem;color:rgba(237,231,248,.55);margin-top:.2rem;}
+.annees td.br{color:var(--lime);font-weight:700;}
+.annees td.zz{font-weight:900;color:var(--coral);font-size:1.15rem;}
+.annees td.nd{color:rgba(237,231,248,.45);font-style:italic;}
+.annees .lecture{margin-top:1.4rem;font-size:.95rem;line-height:1.7;color:rgba(237,231,248,.85);max-width:66ch;}
+.annees .lecture b{color:var(--lime);}
+.annees .src{margin-top:1.1rem;font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.04em;color:rgba(237,231,248,.5);line-height:1.8;max-width:80ch;}
+
 /* ---------- MUR DES SIGNATURES ---------- */
 .mur{padding:clamp(5rem,12vh,8rem) clamp(1.2rem,4vw,3rem);}
 .mur h2{
@@ -964,6 +983,51 @@ body{
       <p>Regardez vos grilles de salaire Indigo. En tête de colonne, une mention : <b>Mini CCNSA</b>. C'est le minimum de la convention collective nationale. Il n'existe aucun minimum d'entreprise au-dessus, sur aucun échelon, ni chez les employés ni chez les agents de maîtrise.</p>
       <p>Voilà le résultat de quatre ans de négociations annuelles signées à l'unanimité. Pas un euro arraché au-dessus de ce que le secteur impose à tout le monde.</p>
     </div>
+  </div>
+
+  <div class="annees reveal">
+    <h3>Année par année</h3>
+    <p class="sub">Les minimums de la branche sont publics : ils sont publiés au Journal officiel à chaque avenant. Il suffit de comparer deux grilles pour connaître la hausse obligatoire. Voici la comparaison avec ce qu'Indigo a annoncé.</p>
+    <div class="annees-scroll">
+      <table>
+        <thead>
+          <tr><th>Grille de branche</th><th>Bas de grille employés</th><th>Hausse imposée</th><th>Indigo annonce</th><th>Ajouté</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="yr">1er avril 2024<small>avenant 105</small></td>
+            <td>1 785 €</td>
+            <td class="nd">non documenté ici</td>
+            <td>2,50%<small>NAO 2024</small></td>
+            <td class="nd">à vérifier</td>
+          </tr>
+          <tr>
+            <td class="yr">1er janvier 2025<small>avenant 108</small></td>
+            <td>1 821 €</td>
+            <td class="br">+2,02%</td>
+            <td>2,00%<small>NAO 2025</small></td>
+            <td class="zz">0</td>
+          </tr>
+          <tr>
+            <td class="yr">1er octobre 2025<small>avenant 109</small></td>
+            <td>—</td>
+            <td class="br">hausse supplémentaire</td>
+            <td>—</td>
+            <td class="zz">0</td>
+          </tr>
+          <tr>
+            <td class="yr">1er mai 2026<small>avenant 110</small></td>
+            <td>1 853 €</td>
+            <td class="br">+1,25%</td>
+            <td>1,20%<small>NAO 2026</small></td>
+            <td class="zz">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lecture">Comment lire ce tableau. En janvier 2025, la branche relève ses minimums de 2,02%. Indigo annonce une augmentation générale de 2,00%. En mai 2026, la branche relève de 1,25%. Indigo annonce 1,20%. <b>Deux années de suite, l'augmentation annoncée par l'entreprise est inférieure à la hausse que la convention collective lui impose déjà.</b> Et en octobre 2025, la branche a encore relevé ses minimums sans qu'aucune négociation d'entreprise ne s'y ajoute.</p>
+    <p class="lecture">Pour 2024 et les années antérieures, nous ne publions pas de chiffre tant que nous n'avons pas la grille de branche correspondante entre les mains. Nous ne publions que ce qui est vérifiable.</p>
+    <p class="src">Sources · Bas de grille ouvriers et employés publié à chaque avenant aux salaires minima de la convention collective des services de l'automobile, IDCC 1090 : 1 785 € au 1er avril 2024 (avenant 105), 1 821 € au 1er janvier 2025 (avenant 108), 1 853 € au 1er mai 2026 (avenant 110, revalorisation moyenne de 1,25% publiée au Journal officiel du 16 avril 2026). Le haut de grille progresse dans les mêmes proportions, ce qui confirme que la hausse s'applique à toute la grille. Pourcentages Indigo : NAO 2025 et NAO 2026, article augmentation générale employés.</p>
   </div>
 
   <div class="ag-chart reveal">
