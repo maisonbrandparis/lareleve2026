@@ -79,11 +79,18 @@
       return;
     }
     fetch(URL_API, {
-      method: 'POST', keepalive: true,
+      method: 'POST', keepalive: true, mode: 'cors',
       headers: { 'Content-Type': 'application/json', apikey: CLE,
                  Authorization: 'Bearer ' + CLE, Prefer: 'return=minimal' },
       body: corps
-    }).catch(function () {});
+    }).catch(function () {
+      if (navigator.sendBeacon) {
+        try {
+          navigator.sendBeacon(URL_API + '?apikey=' + CLE,
+            new Blob([corps], { type: 'application/json' }));
+        } catch (e) {}
+      }
+    });
   }
 
   function demarrer() {
@@ -136,12 +143,19 @@
     addEventListener('pagehide', function () { vider(true); });
   }
 
-  // ville et pays via un service qui ne nous transmet pas l'IP
-  fetch('https://ipapi.co/json/')
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      lieu = { country: d.country_name, region: d.region, city: d.city };
-    })
-    .catch(function () {})
-    .finally(demarrer);
+  // La mesure démarre au plus tard après 1,2 s, même si la géolocalisation
+  // est lente ou bloquée : on ne dépend jamais d'un service extérieur.
+  var lance = false;
+  function go() { if (lance) return; lance = true; demarrer(); }
+  setTimeout(go, 1200);
+
+  try {
+    fetch('https://ipapi.co/json/')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d) lieu = { country: d.country_name, region: d.region, city: d.city };
+      })
+      .catch(function () {})
+      .then(go, go);
+  } catch (e) { go(); }
 })();
