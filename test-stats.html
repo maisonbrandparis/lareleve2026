@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Diagnostic · La Relève</title>
+<style>
+body{background:#0B0714;color:#EDE7F8;font-family:system-ui,sans-serif;padding:1.5rem;line-height:1.6}
+h1{font-size:1.2rem;margin-bottom:1rem}
+.l{border:1px solid rgba(139,61,255,.4);border-radius:10px;padding:.8rem 1rem;margin-bottom:.7rem;font-size:.9rem;word-break:break-word}
+.ok{border-color:#3BE07A;color:#9FF5C0}
+.ko{border-color:#FF6B6B;color:#FFB3B3}
+b{color:#C79BFF}
+a{color:#C79BFF}
+</style></head><body>
+<h1>Diagnostic de la mesure d'audience</h1>
+<div id="out"></div>
+<p style="margin-top:1.5rem"><a href="/admin.html">Aller au tableau de bord</a></p>
+<script>
+var CLE='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZG54bndic2x5a3BnZnNkbHRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwOTc5MTgsImV4cCI6MjEwMDY3MzkxOH0.C1U1vuG3ep0GriLAMKPBDec6v2q0H1QTEiQDeauncAU';
+var API='https://bxdnxnwbslykpgfsdltg.supabase.co/rest/v1/lr_events';
+var out=document.getElementById('out');
+function log(t,cls){var d=document.createElement('div');d.className='l '+(cls||'');d.innerHTML=t;out.appendChild(d)}
+
+log('<b>1. Navigateur</b><br>'+navigator.userAgent);
+log('<b>2. Refus de suivi (DNT)</b><br>'+(navigator.doNotTrack==='1'?'ACTIVÉ · la mesure serait désactivée':'non activé'), navigator.doNotTrack==='1'?'ko':'ok');
+
+log('<b>3. Le fichier stats.js est-il servi ?</b><br>test en cours…');
+fetch('/stats.js?d='+Date.now()).then(function(r){
+  log('<b>3. stats.js</b><br>code HTTP '+r.status, r.ok?'ok':'ko');
+}).catch(function(e){log('<b>3. stats.js</b><br>ÉCHEC · '+e.message,'ko')});
+
+log('<b>4. Envoi vers la base</b><br>test en cours…');
+fetch(API,{method:'POST',headers:{'Content-Type':'application/json',apikey:CLE,
+  Authorization:'Bearer '+CLE,Prefer:'return=minimal'},
+  body:JSON.stringify([{visitor:'diagnostic',session:'diag'+Date.now(),kind:'pageview',page:'/test',
+    country:'France',city:'Test',device:'diagnostic',browser:'diagnostic'}])})
+.then(function(r){
+  return r.text().then(function(t){
+    log('<b>4. Envoi vers la base</b><br>code HTTP '+r.status+(t?'<br>réponse : '+t:'<br>aucune erreur renvoyée'),
+        (r.status>=200&&r.status<300)?'ok':'ko');
+  });
+})
+.catch(function(e){log('<b>4. Envoi vers la base</b><br>ÉCHEC RÉSEAU · '+e.message+'<br>Cause probable : bloqueur de publicité, VPN, ou réseau d\'entreprise qui filtre.','ko')});
+</script></body></html>
