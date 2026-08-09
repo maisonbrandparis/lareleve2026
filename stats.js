@@ -3,7 +3,7 @@
    qui change chaque jour, donc non rattachable à une personne. */
 (function () {
   var URL_API = 'https://bxdnxnwbslykpgfsdltg.supabase.co/rest/v1/lr_events';
-  var CLE = 'sb_publishable_gG8DLCGoOZ1fUBBx566k1w_BlW-eZth';
+  var CLE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZG54bndic2x5a3BnZnNkbHRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwOTc5MTgsImV4cCI6MjEwMDY3MzkxOH0.C1U1vuG3ep0GriLAMKPBDec6v2q0H1QTEiQDeauncAU';
   if (navigator.doNotTrack === '1' || location.hostname === 'localhost') return;
 
   function hachage(s) {
