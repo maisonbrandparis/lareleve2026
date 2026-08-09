@@ -2,7 +2,9 @@
    Aucune adresse IP stockée. L'identifiant visiteur est un hachage
    qui change chaque jour, donc non rattachable à une personne. */
 (function () {
+  var URL_SERVEUR = '/api/collect';   // utilisé si le site tourne sur Vercel
   var URL_API = 'https://bxdnxnwbslykpgfsdltg.supabase.co/rest/v1/lr_events';
+  var serveurOk = null;               // null = inconnu, true/false = testé
   var CLE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZG54bndic2x5a3BnZnNkbHRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwOTc5MTgsImV4cCI6MjEwMDY3MzkxOH0.C1U1vuG3ep0GriLAMKPBDec6v2q0H1QTEiQDeauncAU';
   if (navigator.doNotTrack === '1' || location.hostname === 'localhost') return;
 
@@ -70,9 +72,43 @@
     file.push(d);
     if (immediat || file.length >= 6) vider(immediat);
   }
+  function directSupabase(corps, sync) {
+    if (sync && navigator.sendBeacon) {
+      try {
+        navigator.sendBeacon(URL_API + '?apikey=' + CLE,
+          new Blob([corps], { type: 'application/json' }));
+        return;
+      } catch (e) {}
+    }
+    fetch(URL_API, {
+      method: 'POST', keepalive: true, mode: 'cors',
+      headers: { 'Content-Type': 'application/json', apikey: CLE,
+                 Authorization: 'Bearer ' + CLE, Prefer: 'return=minimal' },
+      body: corps
+    }).catch(function () {});
+  }
+
   function vider(sync) {
     if (!file.length) return;
     var corps = JSON.stringify(file); file = [];
+
+    if (serveurOk !== false) {
+      if (sync && navigator.sendBeacon) {
+        try {
+          navigator.sendBeacon(URL_SERVEUR, new Blob([corps], { type: 'application/json' }));
+          return;
+        } catch (e) {}
+      }
+      fetch(URL_SERVEUR, {
+        method: 'POST', keepalive: true,
+        headers: { 'Content-Type': 'application/json' }, body: corps
+      }).then(function (r) {
+        if (r.ok || r.status === 204) { serveurOk = true; return; }
+        serveurOk = false; directSupabase(corps, sync);
+      }).catch(function () { serveurOk = false; directSupabase(corps, sync); });
+      return;
+    }
+
     if (sync && navigator.sendBeacon) {
       navigator.sendBeacon(URL_API + '?apikey=' + CLE,
         new Blob([corps], { type: 'application/json' }));
